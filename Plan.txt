@@ -1,0 +1,48 @@
+Main questions:
+  1.What data?
+  2.From where we should take data?
+  3.How to store the data?
+  4.What to do with data?
+  5.How to present data?
+  6.Next steps to do
+
+1. What data?
+  Current Categories, Winners, Nominees, 
+  My suggestions(SB):   Score(Tomatometer,Audience score from rottentomatoes/metascore from metacritics, score from imdb )
+                        Budget
+                        Total number of nominations for a film
+                        Country of origin(?)
+
+2. From where we should take data?
+ Wikipedia: main data
+     Plus: easy to navigate 
+           we know there is all the basic data we need
+           we can get all the precise data from here(budget, country of origin...)
+     Cons: maybe too easy for the project
+
+ Rottentomatoes: main data + critics score
+    Plus: less easy
+    Cons: Dynamic site therefore harder to get the data
+
+  Kaggle data set: https://www.kaggle.com/unanimad/the-oscar-award
+    Plus: Acces through API therefore we can show that we are able to do that, and still not that hard as accesing the dynamic page
+    Cons: Not all the data we need. 
+
+  Metacritics: critics score
+
+  IMBD:  imdb score
+
+3. How to store the data?
+    csv data table and working with pandas dataframe to get together data from different sources
+
+4. What to do with data?
+    Basic statistics: Most succesfull countries, Men ws Women winners, Average budget of films in 2021 dollars, correlation between critics choice and winners
+    Advance statistics: Different correlations, maybe some distributions.
+    Hypothesis testing: TBA we can find some interesting hypothesis emerging from basic and advance statistics
+
+5. How to present data?
+    Using Jupyter Notebook, basic graph plotting, maybe some map with different colours from most to less succesfull countries...
+
+6. Next steps
+    Chosing the sources of data
+    Creating flowchart
