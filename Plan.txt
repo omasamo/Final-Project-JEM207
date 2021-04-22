@@ -12,6 +12,7 @@ Main questions:
                         Budget
                         Total number of nominations for a film
                         Country of origin(?)
+                        BAFTA awards / Golden Globe Awards for comparision of winners
 
 2. From where we should take data?
  Wikipedia: main data
@@ -38,7 +39,7 @@ Main questions:
 4. What to do with data?
     Basic statistics: Most succesfull countries, Men ws Women winners, Average budget of films in 2021 dollars, correlation between critics choice and winners
     Advance statistics: Different correlations, maybe some distributions.
-    Hypothesis testing: TBA we can find some interesting hypothesis emerging from basic and advance statistics
+    Hypothesis testing: TBA we can find some interesting hypothesis emerging from basic and advance statistics. For example to test if winning Bafta/Golden Globes is predicting     win of Oscar
 
 5. How to present data?
     Using Jupyter Notebook, basic graph plotting, maybe some map with different colours from most to less succesfull countries...
