@@ -14,7 +14,7 @@ import os
 import sys # to use exit()
 from tkinter import * # Window 
 
-os.chdir(os.path.dirname(os.path.abspath(__file__))) # This changes the working directory to be the same as where the python script is.
+os.chdir(os.path.dirname(os.path.abspath(__file__))) # This changes the working directory to be the same as where the python script is. FOR EXECUTABLE
 
 class Oscar_Scraper:
     
@@ -52,7 +52,7 @@ class Oscar_Scraper:
                     "Actress in a Leading Role": ['Actress', 'Actress in a Leading Role'],
                     "Directing": ["Directing"],
                     "Best Picture": ['Outstanding Picture', 'Outstanding Production','Best Motion Picture', 'Best Picture'],
-                    "Visual Effects" : ['Special Effects', 'Special Visual Effects','Special Achievement Award (Visual Effects)','Visual Effects'],
+                    "Art Direction" : ['Art Direction', 'Production Design'],
                     "Best Foreign Language Film": ["Foreign Language Film"]
                     }
         
@@ -60,6 +60,9 @@ class Oscar_Scraper:
 
         self.categories_individuals = ['Directing', 'Actor', 'Actor in a Leading Role', 'Actress', 'Actress in a Leading Role']
 
+        self.categories_films = ['Outstanding Picture', 'Outstanding Production','Best Motion Picture', 'Best Picture',
+        "Art Direction", 'Production Design',
+        "Foreign Language Film"]
 
         # * Stores the user's selected categories to fetch
         self.selected_categories = []
@@ -93,38 +96,34 @@ class Oscar_Scraper:
         window.geometry("400x500")
         window.title('Which categories do you want to compile ?')
         
-        label1 = Label(window,
+        Title_frontend = Label(window,
                     text = "The Oscar Scapper, by Yann Aubineau and Samuel Bozon",
                     font = ("Times New Roman", 10), 
                     padx = 10, pady = 10)
-        label1.pack()
-
+        Title_frontend.pack()
+        
         Label(window, text="From:").pack(pady = 2)
-        textExample = Entry(window)
-        textExample.pack(pady=2)
-        textExample.insert(END, '1930')
+        From_user = Entry(window)
+        From_user.pack(pady=2)
+        From_user.insert(END, '1930')
 
         Label(window, text="To:").pack(pady = 2)
-        textExample2 = Entry(window)
-        textExample2.pack(pady=2)
-        textExample2.insert(END, '2021')
+        To_user = Entry(window)
+        To_user.pack(pady=2)
+        To_user.insert(END, '2021')
         
         # for scrolling vertically
         yscrollbar = Scrollbar(window)
         yscrollbar.pack(side = RIGHT, fill = Y)
         
-        label2 = Label(window,
+        Informations = Label(window,
                     text = "Which categories do you want to compile ?\n Select the categories below :  ",
                     font = ("Times New Roman", 10), 
                     padx = 10, pady = 10)
-        label2.pack()
+        Informations.pack()
+        list_selection = Listbox(window, selectmode = "multiple", yscrollcommand = yscrollbar.set)
 
-        list_selection = Listbox(window, selectmode = "multiple", 
-                    yscrollcommand = yscrollbar.set)
-        
-
-        list_selection.pack(padx = 2, pady = 2,
-                expand = NO, fill = X)
+        list_selection.pack(padx = 2, pady = 2, expand = NO, fill = X)
         
         list_categories_possible = [item for item in list(self.categories_dictionary.keys())]
 
@@ -139,7 +138,9 @@ class Oscar_Scraper:
         r2 = Radiobutton(window, text="Manual run", value=2, variable=self.user_imput)
         r2.pack(pady = 2, padx= 2)
         
-        exit_button = Button(window, text="Done", command= lambda:[fCategories(),fDates(),window.destroy(),self.Run()])
+        
+    
+        exit_button = Button(window, text="Done", command= lambda:[fCategories(),fPopup(),fDates(), fExit()])
         exit_button.pack(pady=20)
         
 
@@ -149,9 +150,7 @@ class Oscar_Scraper:
 
             self.input_selected = []
             for i in list_selection.curselection():
-        
                 self.input_selected.append(list_selection.get(i)) 
-            
             # * From the index of the selected categories to the selected categories.
             for input_categories in self.input_selected:
                 if input_categories in self.categories_dictionary.get(input_categories):
@@ -160,26 +159,53 @@ class Oscar_Scraper:
 
         def fDates():
 
-            # ! It handles errors regarding time periods.
-
-            try:
-                self.from_time = int(textExample.get())
-                if self.from_time < 1930:
-                    print("The Academy Awards ceremony starts in 1929 but the categories are standardized in the 1930's ceremony. Please pick between 1930 and 2021.")
-                    raise Exception
-
-                self.to_time = int(textExample2.get())
-                if self.to_time > 2021:
-                    print("This program supports Academy Awards ceremonies until 2021. Please pick between 1930 and 2021.")
-                    raise Exception
-
-                if self.from_time > self.to_time:
-                    raise Exception
-
+                self.from_time = int(From_user.get())
+                self.to_time = int(To_user.get())
                 self.time_period = range(self.from_time, self.to_time + 1)
-                
-            except Exception as e:
-                print("You must enter a valid range of dates.\nThe object was not created.")
+
+        def fPopup():
+            self.popup = FALSE
+            if self.input_selected == []:
+                text = "You must select at least one category"
+                self.popup = TRUE
+
+            if self.user_imput.get() == 0: 
+                text = "You must choose how to use the program"
+                self.popup = TRUE
+
+            if not To_user.get().isdigit() or not From_user.get().isdigit():
+                text = "You must enter valid dates."
+                self.popup = TRUE
+            if To_user.get().isdigit() and From_user.get().isdigit():
+                if  int(From_user.get()) < 1930:
+                    text = "The Academy Awards ceremony starts in 1929 but the categories are standardized in the 1930's ceremony. Please pick between 1930 and 2021."
+                    self.popup = TRUE
+
+                if  int(To_user.get()) > 2021:
+                    text = "This program supports Academy Awards ceremonies until 2021. Please pick between 1930 and 2021."
+                    self.popup = TRUE
+
+                if int(From_user.get()) > int(To_user.get()):
+                    text = "You must enter a valid range of dates."
+                    self.popup = TRUE
+
+            if self.popup == TRUE:
+                fInfos = Toplevel()		  # Popup -> Toplevel()
+                fInfos.title('Warning')
+                Label(fInfos, text= text ).pack(pady = 10, padx = 10)
+                Button(fInfos, text='OK', command=fInfos.destroy).pack(padx=10, pady=10)
+                fInfos.transient(window) 	  # Réduction popup impossible 
+                fInfos.grab_set()		  # Interaction avec fenetre jeu impossible
+                window.wait_window(fInfos)   # Arrêt script principal
+
+            
+        
+        def fExit():
+            if self.popup == FALSE:
+                window.destroy()
+                self.Run()
+            else:
+                self.popup = FALSE # Reinitialization
 
         window.mainloop()
 
@@ -199,6 +225,7 @@ class Oscar_Scraper:
         """
 
         print("Getting the content of oscars.org webpages ...")
+        
         for number_year in tqdm(self.time_period):
             try:
                 #time.sleep(10) # Crawlerdelay
@@ -347,11 +374,11 @@ class Oscar_Scraper:
 
         print("Extracting the data of the website ...")    
         for years in tqdm(range(len(self.links['oscars']))):
-
             categories = self.links['oscars'][years].css('#quicktabs-tabpage-honorees-0 > div > div.view-content > div.view-grouping > div.view-grouping-header > h2::text').extract()    
             for i in range(len(categories)):
+                
                 if categories[i] in self.selected_categories:
-
+                    
                     # Need the number of winners (might be ties) and nominated          
                     path_nominated = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:last-child".format(i+1)
                     number_of_film_nominated = int(''.join(self.links['oscars'][years].css(path_nominated).extract()).split("views-row-")[1])
@@ -367,9 +394,11 @@ class Oscar_Scraper:
 
 
                     ## WINNERS                 
+                    
                     self.getWinners(years, i, categories[i], number_winners)     
                     
                     ## NOMINEES
+                    
                     self.getNominees(years, i, categories[i], number_of_film_nominated, number_winners)   
 
                     
@@ -382,31 +411,47 @@ class Oscar_Scraper:
         }            
     
         self.Correction(0,True)
-        print(self.data)
+        
 
 
     def getINDIVIDUALS(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
         individuals = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_individuals]]
-        return(individuals)
+        return(print(individuals))
     
     def saveINDIVIDUALS(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
         individuals = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_individuals]]
         individuals.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns 
-        individuals.to_csv("Individuals.csv")
-        return(print("The dataframe was saved as Individuals.csv in your working directory."))
-
+        i = 0
+        while os.path.exists("data\Individuals%s.csv" % i):
+            i += 1
+        individuals.to_csv("data\Individuals%s.csv" % i)
+        
+        return(print("The dataframe was saved as Individuals%s.csv in your working directory." % i))
+    
         
     def getFILMS(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
-        films = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_interest[5:]]]
-        films.columns = ('film', 'Studio/Creator(s)', 'result')
-        return(films)
-    
+        films = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_films]]
+        films.columns = ('film', 'Studio/Creator(s)', 'result',"gender","birthdate")
+        return(print(films))
+
+    def saveFILMS(self):
+        df = pd.DataFrame(self.data)
+        df = df.set_index(['year', 'category'])
+        films = df.loc(axis=0)[pd.IndexSlice[:, self.categories_films]]
+        films.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns 
+        films.columns = ('film', 'Studio/Creator(s)', 'result',"gender","birthdate")        
+        i = 0
+        while os.path.exists("data\Films%s.csv" % i):
+            i += 1
+        films.to_csv("data\Films%s.csv" % i)
+        return(print("The dataframe was saved as Films%s.csv in your working directory." % i))
+
      #creating big dataframe with all data
     def getAllCategories(self):
         df = pd.DataFrame(self.data)
@@ -423,6 +468,9 @@ class Oscar_Scraper:
         Returns nothing
         
         """
+        i = 1
+        wrongfilms = []
+        count_indiv_records = -1
         API_KEY_MDB = "a68690ebf69567801e68c26ee82d7787"
         URL_MDB_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key={}&language=en-US&query={}&page={}&include_adult=false"
         URL_MDB_PERSON = "https://api.themoviedb.org/3/person/{}?api_key={}"
@@ -431,58 +479,90 @@ class Oscar_Scraper:
 
         try:
             for film_number in tqdm(range(len(self.data['film']))):
-                title_standard = quote(self.data['film'][film_number])
-                response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,1)).text)
-                if response_search["total_results"] != 0:        
-                    if self.TMDB_get(response_search, film_number) == True:
+                if self.data['category'][film_number] in self.categories_individuals:
+                    count_indiv_records += 1
+                    title_standard = quote(self.data['film'][film_number])
+                    response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,1)).text)
+                    if response_search["total_results"] != 0:        
+                        if self.TMDB_get(response_search, film_number) == True:
 
-                        response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[film_number],API_KEY_MDB)).text)
-                        if response_person.get("success") != False: # Check if the API find a person
+                            response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
+                            if response_person.get("success") != False: # Check if the API find a person
 
-                            if response_person["birthday"] in (None,0):
-                                pass
-                            
-                            if response_person["gender"] in (None,0):
-                                pass
-                            self.list_birthday.append(response_person["birthday"])
-                            self.list_gender.append(response_person["gender"])
-                        else:
-                            pass
-                    else:
-                        response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,2)).text)
-                        if response_search["total_results"] != 0:        
-                            if self.TMDB_get(response_search, film_number) == True:
-                                response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[film_number],API_KEY_MDB)).text)
-                                if response_person.get("success") != False: # Check if the API find a person
-                                    if response_person["birthday"] in (None,0):
-                                        pass
-                                    
-                                    if response_person["gender"] in (None,0):
-                                        pass
-                                    self.list_birthday.append(response_person["birthday"])
-                                    self.list_gender.append(response_person["gender"])
-                                else:
+                                if response_person["birthday"] in (None,0):
                                     pass
+                                
+                                if response_person["gender"] in (None,0):
+                                    pass
+                                self.list_birthday.append(response_person["birthday"])
+                                self.list_gender.append(response_person["gender"])
                             else:
-                                # specific problems with some 1930's movies
-                                URL_MDB_SEARCH1930 = "https://api.themoviedb.org/3/search/movie?api_key={}&language=en-US&query={}&page={}&include_adult=false&year=1930"
-                                response_search = json.loads(requests.get(URL_MDB_SEARCH1930.format(API_KEY_MDB,title_standard,1)).text)
-                                if response_search["total_results"] != 0:        
-                                    if self.TMDB_get(response_search, film_number) == True:
-                                        response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[film_number],API_KEY_MDB)).text)
-                                        if response_person.get("success") != False: # Check if the API find a person
-                                            
-                                            if response_person["birthday"] in (None,0):
-                                                pass
-                                            if response_person["gender"] in (None,0):
-                                                pass
-                                            self.list_birthday.append(response_person["birthday"])
-                                            self.list_gender.append(response_person["gender"])
-                                        else:
+                                pass
+                        else:
+                            response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,2)).text)
+                            if response_search["total_results"] != 0:        
+                                if self.TMDB_get(response_search, film_number) == True:
+                                    response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
+                                    if response_person.get("success") != False: # Check if the API find a person
+                                        if response_person["birthday"] in (None,0):
                                             pass
-                else:
-                    pass
-                    self.Correction(film_number, False)
+                                        
+                                        if response_person["gender"] in (None,0):
+                                            pass
+                                        self.list_birthday.append(response_person["birthday"])
+                                        self.list_gender.append(response_person["gender"])
+                                    else:
+                                        pass
+                                else:
+                                    # specific problems with some 1930's movies
+                                    URL_MDB_SEARCH1930 = "https://api.themoviedb.org/3/search/movie?api_key={}&language=en-US&query={}&page={}&include_adult=false&year=1930"
+                                    response_search = json.loads(requests.get(URL_MDB_SEARCH1930.format(API_KEY_MDB,title_standard,1)).text)
+                                    if response_search["total_results"] != 0:        
+                                        if self.TMDB_get(response_search, film_number) == True:
+                                            response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
+                                            if response_person.get("success") != False: # Check if the API find a person
+                                                
+                                                if response_person["birthday"] in (None,0):
+                                                    pass
+                                                if response_person["gender"] in (None,0):
+                                                    pass
+                                                self.list_birthday.append(response_person["birthday"])
+                                                self.list_gender.append(response_person["gender"])
+                                            else:
+                                                pass
+                    else:
+                        pass
+                        self.Correction(film_number, False)
+                elif self.data['category'][film_number] in self.categories_films:
+                    self.list_birthday.append(np.nan)
+                    self.list_gender.append(np.nan)
+                    title_standard = quote(self.data['film'][film_number])
+                    response_search = json.loads(
+                        requests.get(URL_MDB_SEARCH.format(API_KEY_MDB, title_standard, 1)).text)
+                    try:
+                        if response_search['total_results'] == 0:
+                            print(str(response_search['total_results']) + '--' + str(self.data["film"][film_number]))
+                            wrongfilms.append(self.data["film"][film_number])
+                        for number_results in range(len(response_search["results"])):
+                            if jellyfish.damerau_levenshtein_distance(
+                                    str(response_search["results"][number_results].get("title")),
+                                    str(self.data["film"][film_number])) < 3:
+
+                                if response_search["results"][number_results].get("release_date") not in (
+                                        None, 0, ''):
+                                    if (int(response_search["results"][number_results]["release_date"][0:4]) in (
+                                            self.data["year"][film_number], self.data["year"][film_number] - 1,
+                                            self.data["year"][film_number] - 2,
+                                            self.data["year"][film_number] - 3)):
+                                        i += 1
+                            else:
+                                i += 1
+                    except KeyError:
+                        #print('Key Error' + '--' + str(self.data["film"][film_number]))
+                        wrongfilms.append(self.data["film"][film_number])
+            else:
+                pass
+
         except requests.exceptions.RequestException as e:  
             print("There was an error while requesting the API of TheMovieDataBase website. Please retry or check your connection or the status of the website. See next the error message: ", e)
             raise SystemExit(e)
@@ -495,11 +575,15 @@ class Oscar_Scraper:
             elif self.list_gender[i] == 3:
                 self.list_gender[i] = "Non-binary"
 
-            self.list_birthday[i] = int(self.list_birthday[i][0:4]) # We keep only the year and transform from string to float
+            if np.nan not in [self.list_birthday[i]]:
+                self.list_birthday[i] = str(self.list_birthday[i][0:4]) # We keep only the year and transform from string to integer
+
             
         self.data['gender'] = self.list_gender
         self.data['birthday'] = self.list_birthday
-        
+
+        wfdf = pd.DataFrame(wrongfilms)
+        wfdf.to_csv('data/corrections/wfdf.csv')  # all the wrong names of the films in film categories
         
                                         
     def TMDB_get(self, response_search, film_number):
@@ -575,15 +659,15 @@ class Oscar_Scraper:
                 self.list_films_wrong.append(self.data["film"][film_number])
                 self.list_films_right.append(answer)
                 self.data["film"][film_number] = answer
-                pd.DataFrame(self.list_films_right).to_csv('list_films_right.csv',index=False) 
-                pd.DataFrame(self.list_films_wrong).to_csv('list_films_wrong.csv',index=False) 
+                pd.DataFrame(self.list_films_right).to_csv('data\corrections\list_films_right.csv',index=False) 
+                pd.DataFrame(self.list_films_wrong).to_csv('data\corrections\list_films_wrong.csv',index=False) 
             if question == "n":
                 answer = input("Bon nom ?")
                 self.list_names_wrong.append(self.data["name"][film_number])
                 self.list_names_right.append(answer)           
                 self.data["name"][film_number] = answer
-                pd.DataFrame(self.list_names_right).to_csv('list_names_right.csv',index=False) 
-                pd.DataFrame(self.list_names_wrong).to_csv('list_names_wrong.csv',index=False) 
+                pd.DataFrame(self.list_names_right).to_csv('data\corrections\list_names_right.csv',index=False) 
+                pd.DataFrame(self.list_names_wrong).to_csv('data\corrections\list_names_wrong.csv',index=False) 
             if question == "b":
                 answer1 = input("Bon titre film ?")
                 answer2 = input("Bon nom ?")
@@ -593,18 +677,18 @@ class Oscar_Scraper:
                 self.list_names_right.append(answer2)
                 self.data["film"][film_number] = answer1
                 self.data["name"][film_number] = answer2
-                pd.DataFrame(self.list_names_right).to_csv('list_names_right.csv',index=False) 
-                pd.DataFrame(self.list_names_wrong).to_csv('list_names_wrong.csv',index=False)
-                pd.DataFrame(self.list_films_right).to_csv('list_films_right.csv',index=False) 
-                pd.DataFrame(self.list_films_wrong).to_csv('list_films_wrong.csv',index=False) 
+                pd.DataFrame(self.list_names_right).to_csv('data\corrections\list_names_right.csv',index=False) 
+                pd.DataFrame(self.list_names_wrong).to_csv('data\corrections\list_names_wrong.csv',index=False)
+                pd.DataFrame(self.list_films_right).to_csv('data\corrections\list_films_right.csv',index=False) 
+                pd.DataFrame(self.list_films_wrong).to_csv('data\corrections\list_films_wrong.csv',index=False) 
             if question == "p":
                 pass
 
         if corrected == True:
-            list_films_right = pd.read_csv("list_films_right.csv")
-            list_films_wrong = pd.read_csv("list_films_wrong.csv")
-            list_names_right = pd.read_csv("list_names_right.csv")
-            list_names_wrong = pd.read_csv("list_names_wrong.csv")
+            list_films_right = pd.read_csv("data\corrections\list_films_right.csv")
+            list_films_wrong = pd.read_csv("data\corrections\list_films_wrong.csv")
+            list_names_right = pd.read_csv("data\corrections\list_names_right.csv")
+            list_names_wrong = pd.read_csv("data\corrections\list_names_wrong.csv")
             l_films = len(list_films_right)
             l_names = len(list_names_right)
             l_data = len(self.data["film"])
@@ -632,8 +716,19 @@ class Oscar_Scraper:
             self.getHTML()
             self.getDATA()
             self.getAPI_TMDB()
-            self.getINDIVIDUALS()
-            self.saveINDIVIDUALS()
-
+            if any(self.selected_categories[i] in self.categories_individuals for i in range(len(self.selected_categories))):
+                self.getINDIVIDUALS()
+                self.saveINDIVIDUALS()
+            if any(self.selected_categories[i] in self.categories_films for i in range(len(self.selected_categories))):
+                self.getFILMS()
+                self.saveFILMS()
+            input("Press any key to exit:")
+            
+            
+        
+                 
+            
 test = Oscar_Scraper()
+
+
 
