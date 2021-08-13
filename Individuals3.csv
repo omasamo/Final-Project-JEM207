@@ -1,0 +1,206 @@
+year,category,film,name,result,gender,birthday
+1930,Directing,The Divine Lady,Frank Lloyd,Winner,Male,1886
+1930,Directing,Madame X,Lionel Barrymore,Nominee,Male,1878
+1930,Directing,The Broadway Melody,Harry Beaumont,Nominee,Male,1888
+1930,Directing,In Old Arizona,Irving Cummings,Nominee,Male,1888
+1930,Directing,Drag,Frank Lloyd,Nominee,Male,1886
+1930,Directing,Weary River,Frank Lloyd,Nominee,Male,1886
+1930,Directing,The Patriot,Ernst Lubitsch,Nominee,Male,1892
+1931,Directing,All Quiet on the Western Front,Lewis Milestone,Winner,Male,1895
+1931,Directing,Anna Christie,Clarence Brown,Nominee,Male,1890
+1931,Directing,Romance,Clarence Brown,Nominee,Male,1890
+1931,Directing,The Divorcee,Robert Z. Leonard,Nominee,Male,1889
+1931,Directing,The Love Parade,Ernst Lubitsch,Nominee,Male,1892
+1931,Directing,Hallelujah,King Vidor,Nominee,Male,1894
+1932,Directing,Skippy,Norman Taurog,Winner,Male,1899
+1932,Directing,Cimarron,Wesley Ruggles,Nominee,Male,1889
+1932,Directing,A Free Soul,Clarence Brown,Nominee,Male,1890
+1932,Directing,The Front Page,Lewis Milestone,Nominee,Male,1895
+1932,Directing,Morocco,Josef Von Sternberg,Nominee,Male,1894
+1933,Directing,Bad Girl,Frank Borzage,Winner,Male,1894
+1933,Directing,The Champ,King Vidor,Nominee,Male,1894
+1933,Directing,Shanghai Express,Josef Von Sternberg,Nominee,Male,1894
+1934,Directing,Cavalcade,Frank Lloyd,Winner,Male,1886
+1934,Directing,Lady for a Day,Frank Capra,Nominee,Male,1897
+1934,Directing,Little Women,George Cukor,Nominee,Male,1899
+1935,Directing,It Happened One Night,Frank Capra,Winner,Male,1897
+1935,Directing,One Night of Love,Victor Schertzinger,Nominee,Male,1888
+1935,Directing,The Thin Man,W. S. Van Dyke,Nominee,Male,1889
+1936,Directing,The Informer,John Ford,Winner,Male,1894
+1936,Directing,Captain Blood,Michael Curtiz,Nominee,Male,1886
+1936,Directing,The Lives of a Bengal Lancer,Henry Hathaway,Nominee,Male,1898
+1936,Directing,Mutiny on the Bounty,Frank Lloyd,Nominee,Male,1886
+1937,Directing,Mr. Deeds Goes to Town,Frank Capra,Winner,Male,1897
+1937,Directing,Dodsworth,William Wyler,Nominee,Male,1902
+1937,Directing,The Great Ziegfeld,Robert Z. Leonard,Nominee,Male,1889
+1937,Directing,My Man Godfrey,Gregory La Cava,Nominee,Male,1892
+1937,Directing,San Francisco,W. S. Van Dyke,Nominee,Male,1889
+1938,Directing,The Awful Truth,Leo McCarey,Winner,Male,1896
+1938,Directing,The Good Earth,Sidney Franklin,Nominee,Male,1893
+1938,Directing,The Life of Emile Zola,William Dieterle,Nominee,Male,1893
+1938,Directing,Stage Door,Gregory La Cava,Nominee,Male,1892
+1938,Directing,A Star Is Born,William A. Wellman,Nominee,Male,1896
+1939,Directing,You Can't Take It with You,Frank Capra,Winner,Male,1897
+1939,Directing,Angels with Dirty Faces,Michael Curtiz,Nominee,Male,1886
+1939,Directing,Boys Town,Norman Taurog,Nominee,Male,1899
+1939,Directing,The Citadel,King Vidor,Nominee,Male,1894
+1939,Directing,Four Daughters,Michael Curtiz,Nominee,Male,1886
+1940,Directing,Gone with the Wind,Victor Fleming,Winner,Male,1889
+1940,Directing,"Goodbye, Mr. Chips",Sam Wood,Nominee,Male,1883
+1940,Directing,Mr. Smith Goes to Washington,Frank Capra,Nominee,Male,1897
+1940,Directing,Stagecoach,John Ford,Nominee,Male,1894
+1940,Directing,Wuthering Heights,William Wyler,Nominee,Male,1902
+1941,Directing,The Grapes of Wrath,John Ford,Winner,Male,1894
+1941,Directing,Kitty Foyle,Sam Wood,Nominee,Male,1883
+1941,Directing,The Letter,William Wyler,Nominee,Male,1902
+1941,Directing,The Philadelphia Story,George Cukor,Nominee,Male,1899
+1941,Directing,Rebecca,Alfred Hitchcock,Nominee,Male,1899
+1942,Directing,How Green Was My Valley,John Ford,Winner,Male,1894
+1942,Directing,Citizen Kane,Orson Welles,Nominee,Male,1915
+1942,Directing,Here Comes Mr. Jordan,Alexander Hall,Nominee,Male,1894
+1942,Directing,The Little Foxes,William Wyler,Nominee,Male,1902
+1942,Directing,Sergeant York,Howard Hawks,Nominee,Male,1896
+1943,Directing,Mrs. Miniver,William Wyler,Winner,Male,1902
+1943,Directing,Kings Row,Sam Wood,Nominee,Male,1883
+1943,Directing,Random Harvest,Mervyn LeRoy,Nominee,Male,1900
+1943,Directing,Wake Island,John Farrow,Nominee,Male,1904
+1943,Directing,Yankee Doodle Dandy,Michael Curtiz,Nominee,Male,1886
+1944,Directing,Casablanca,Michael Curtiz,Winner,Male,1886
+1944,Directing,Heaven Can Wait,Ernst Lubitsch,Nominee,Male,1892
+1944,Directing,The Human Comedy,Clarence Brown,Nominee,Male,1890
+1944,Directing,The More the Merrier,George Stevens,Nominee,Male,1904
+1944,Directing,The Song of Bernadette,Henry King,Nominee,Male,1886
+1945,Directing,Going My Way,Leo McCarey,Winner,Male,1896
+1945,Directing,Double Indemnity,Billy Wilder,Nominee,Male,1906
+1945,Directing,Laura,Otto Preminger,Nominee,Male,1906
+1945,Directing,Lifeboat,Alfred Hitchcock,Nominee,Male,1899
+1945,Directing,Wilson,Henry King,Nominee,Male,1886
+1946,Directing,The Lost Weekend,Billy Wilder,Winner,Male,1906
+1946,Directing,The Bells of St. Mary's,Leo McCarey,Nominee,Male,1896
+1946,Directing,National Velvet,Clarence Brown,Nominee,Male,1890
+1946,Directing,The Southerner,Jean Renoir,Nominee,Male,1894
+1946,Directing,Spellbound,Alfred Hitchcock,Nominee,Male,1899
+1947,Directing,The Best Years of Our Lives,William Wyler,Winner,Male,1902
+1947,Directing,Brief Encounter,David Lean,Nominee,Male,1908
+1947,Directing,It's a Wonderful Life,Frank Capra,Nominee,Male,1897
+1947,Directing,The Killers,Robert Siodmak,Nominee,Male,1900
+1947,Directing,The Yearling,Clarence Brown,Nominee,Male,1890
+1948,Directing,Gentleman's Agreement,Elia Kazan,Winner,Male,1909
+1948,Directing,The Bishop's Wife,Henry Koster,Nominee,Male,1905
+1948,Directing,Crossfire,Edward Dmytryk,Nominee,Male,1908
+1948,Directing,A Double Life,George Cukor,Nominee,Male,1899
+1948,Directing,Great Expectations,David Lean,Nominee,Male,1908
+1949,Directing,The Treasure of the Sierra Madre,John Huston,Winner,Male,1906
+1949,Directing,Hamlet,Laurence Olivier,Nominee,Male,1907
+1949,Directing,Johnny Belinda,Jean Negulesco,Nominee,Male,1900
+1949,Directing,The Search,Fred Zinnemann,Nominee,Male,1907
+1949,Directing,The Snake Pit,Anatole Litvak,Nominee,Male,1902
+1950,Directing,A Letter to Three Wives,Joseph L. Mankiewicz,Winner,Male,1909
+1950,Directing,All the King's Men,Robert Rossen,Nominee,Male,1908
+1950,Directing,Battleground,William A. Wellman,Nominee,Male,1896
+1950,Directing,The Fallen Idol,Carol Reed,Nominee,Male,1906
+1950,Directing,The Heiress,William Wyler,Nominee,Male,1902
+1930,Actress,Coquette,Mary Pickford,Winner,Female,1892
+1930,Actress,Madame X,Ruth Chatterton,Nominee,Female,1892
+1930,Actress,The Barker,Betty Compson,Nominee,Female,1897
+1930,Actress,The Letter,Jeanne Eagels,Nominee,Female,1890
+1930,Actress,The Divine Lady,Corinne Griffith,Nominee,Female,1894
+1930,Actress,The Broadway Melody,Bessie Love,Nominee,Female,1898
+1931,Actress,The Divorcee,Norma Shearer,Winner,Female,1902
+1931,Actress,The Devil's Holiday,Nancy Carroll,Nominee,Female,1903
+1931,Actress,Sarah and Son,Ruth Chatterton,Nominee,Female,1892
+1931,Actress,Anna Christie,Greta Garbo,Nominee,Female,1905
+1931,Actress,Romance,Greta Garbo,Nominee,Female,1905
+1931,Actress,Their Own Desire,Norma Shearer,Nominee,Female,1902
+1931,Actress,The Trespasser,Gloria Swanson,Nominee,Female,1899
+1932,Actress,Min and Bill,Marie Dressler,Winner,Female,1868
+1932,Actress,Morocco,Marlene Dietrich,Nominee,Female,1901
+1932,Actress,Cimarron,Irene Dunne,Nominee,Female,1898
+1932,Actress,Holiday,Ann Harding,Nominee,Female,1901
+1932,Actress,A Free Soul,Norma Shearer,Nominee,Female,1902
+1933,Actress,The Sin of Madelon Claudet,Helen Hayes,Winner,Female,1900
+1933,Actress,Emma,Marie Dressler,Nominee,Female,1868
+1933,Actress,The Guardsman,Lynn Fontanne,Nominee,Female,1887
+1934,Actress,Morning Glory,Katharine Hepburn,Winner,Female,1907
+1934,Actress,Lady for a Day,May Robson,Nominee,Female,1858
+1934,Actress,Cavalcade,Diana Wynyard,Nominee,Female,1906
+1935,Actress,It Happened One Night,Claudette Colbert,Winner,Female,1903
+1935,Actress,Of Human Bondage,Bette Davis,Nominee,Female,1908
+1935,Actress,One Night of Love,Grace Moore,Nominee,Female,1898
+1935,Actress,The Barretts of Wimpole Street,Norma Shearer,Nominee,Female,1902
+1936,Actress,Dangerous,Bette Davis,Winner,Female,1908
+1936,Actress,Escape Me Never,Elisabeth Bergner,Nominee,Female,1897
+1936,Actress,Private Worlds,Claudette Colbert,Nominee,Female,1903
+1936,Actress,Alice Adams,Katharine Hepburn,Nominee,Female,1907
+1936,Actress,Becky Sharp,Miriam Hopkins,Nominee,Female,1902
+1936,Actress,The Dark Angel,Merle Oberon,Nominee,Female,1911
+1937,Actress,The Great Ziegfeld,Luise Rainer,Winner,Female,1910
+1937,Actress,Theodora Goes Wild,Irene Dunne,Nominee,Female,1898
+1937,Actress,Valiant Is the Word for Carrie,Gladys George,Nominee,Female,1900
+1937,Actress,My Man Godfrey,Carole Lombard,Nominee,Female,1908
+1937,Actress,Romeo and Juliet,Norma Shearer,Nominee,Female,1902
+1938,Actress,The Good Earth,Luise Rainer,Winner,Female,1910
+1938,Actress,The Awful Truth,Irene Dunne,Nominee,Female,1898
+1938,Actress,Camille,Greta Garbo,Nominee,Female,1905
+1938,Actress,A Star Is Born,Janet Gaynor,Nominee,Female,1906
+1938,Actress,Stella Dallas,Barbara Stanwyck,Nominee,Female,1907
+1939,Actress,Jezebel,Bette Davis,Winner,Female,1908
+1939,Actress,White Banners,Fay Bainter,Nominee,Female,1891
+1939,Actress,Pygmalion,Wendy Hiller,Nominee,Female,1912
+1939,Actress,Marie Antoinette,Norma Shearer,Nominee,Female,1902
+1939,Actress,Three Comrades,Margaret Sullavan,Nominee,Female,1909
+1940,Actress,Gone with the Wind,Vivien Leigh,Winner,Female,1913
+1940,Actress,Dark Victory,Bette Davis,Nominee,Female,1908
+1940,Actress,Love Affair,Irene Dunne,Nominee,Female,1898
+1940,Actress,Ninotchka,Greta Garbo,Nominee,Female,1905
+1940,Actress,"Goodbye, Mr. Chips",Greer Garson,Nominee,Female,1904
+1941,Actress,Kitty Foyle,Ginger Rogers,Winner,Female,1911
+1941,Actress,The Letter,Bette Davis,Nominee,Female,1908
+1941,Actress,Rebecca,Joan Fontaine,Nominee,Female,1917
+1941,Actress,The Philadelphia Story,Katharine Hepburn,Nominee,Female,1907
+1941,Actress,Our Town,Martha Scott,Nominee,Female,1912
+1942,Actress,Suspicion,Joan Fontaine,Winner,Female,1917
+1942,Actress,The Little Foxes,Bette Davis,Nominee,Female,1908
+1942,Actress,Hold Back the Dawn,Olivia de Havilland,Nominee,Female,1916
+1942,Actress,Blossoms in the Dust,Greer Garson,Nominee,Female,1904
+1942,Actress,Ball of Fire,Barbara Stanwyck,Nominee,Female,1907
+1943,Actress,Mrs. Miniver,Greer Garson,Winner,Female,1904
+1943,Actress,"Now, Voyager",Bette Davis,Nominee,Female,1908
+1943,Actress,Woman of the Year,Katharine Hepburn,Nominee,Female,1907
+1943,Actress,My Sister Eileen,Rosalind Russell,Nominee,Female,1907
+1943,Actress,The Pride of the Yankees,Teresa Wright,Nominee,Female,1918
+1944,Actress,The Song of Bernadette,Jennifer Jones,Winner,Female,1919
+1944,Actress,The More the Merrier,Jean Arthur,Nominee,Female,1900
+1944,Actress,For Whom the Bell Tolls,Ingrid Bergman,Nominee,Female,1915
+1944,Actress,The Constant Nymph,Joan Fontaine,Nominee,Female,1917
+1944,Actress,Madame Curie,Greer Garson,Nominee,Female,1904
+1945,Actress,Gaslight,Ingrid Bergman,Winner,Female,1915
+1945,Actress,Since You Went Away,Claudette Colbert,Nominee,Female,1903
+1945,Actress,Mr. Skeffington,Bette Davis,Nominee,Female,1908
+1945,Actress,Mrs. Parkington,Greer Garson,Nominee,Female,1904
+1945,Actress,Double Indemnity,Barbara Stanwyck,Nominee,Female,1907
+1946,Actress,Mildred Pierce,Joan Crawford,Winner,Female,1904
+1946,Actress,The Bells of St. Mary's,Ingrid Bergman,Nominee,Female,1915
+1946,Actress,The Valley of Decision,Greer Garson,Nominee,Female,1904
+1946,Actress,Love Letters,Jennifer Jones,Nominee,Female,1919
+1946,Actress,Leave Her to Heaven,Gene Tierney,Nominee,Female,1920
+1947,Actress,To Each His Own,Olivia de Havilland,Winner,Female,1916
+1947,Actress,Brief Encounter,Celia Johnson,Nominee,Female,1908
+1947,Actress,Duel in the Sun,Jennifer Jones,Nominee,Female,1919
+1947,Actress,Sister Kenny,Rosalind Russell,Nominee,Female,1907
+1947,Actress,The Yearling,Jane Wyman,Nominee,Female,1917
+1948,Actress,The Farmer's Daughter,Loretta Young,Winner,Female,1913
+1948,Actress,Possessed,Joan Crawford,Nominee,Female,1904
+1948,Actress,Smash-Up--The Story of a Woman,Susan Hayward,Nominee,Female,1917
+1948,Actress,Gentleman's Agreement,Dorothy McGuire,Nominee,Female,1916
+1948,Actress,Mourning Becomes Electra,Rosalind Russell,Nominee,Female,1907
+1949,Actress,Johnny Belinda,Jane Wyman,Winner,Female,1917
+1949,Actress,Joan of Arc,Ingrid Bergman,Nominee,Female,1915
+1949,Actress,The Snake Pit,Olivia de Havilland,Nominee,Female,1916
+1949,Actress,I Remember Mama,Irene Dunne,Nominee,Female,1898
+1949,Actress,"Sorry, Wrong Number",Barbara Stanwyck,Nominee,Female,1907
+1950,Actress,The Heiress,Olivia de Havilland,Winner,Female,1916
+1950,Actress,Pinky,Jeanne Crain,Nominee,Female,1925
+1950,Actress,My Foolish Heart,Susan Hayward,Nominee,Female,1917
+1950,Actress,"Edward, My Son",Deborah Kerr,Nominee,Female,1921
+1950,Actress,Come to the Stable,Loretta Young,Nominee,Female,1913
