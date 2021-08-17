@@ -42,8 +42,11 @@ class Oscar_Scraper:
 
         # * List of the content of every oscars.org pages used
         self.links = {
-            'oscars':[]
+            'oscars':[],
+            'path': [os.path.join("data", "corrections")]
         }
+
+        
         
 
         # * Lists of different names for same categories
@@ -149,8 +152,8 @@ class Oscar_Scraper:
             # * Stores the index of the selected categories after the exit_button press.
 
             self.input_selected = []
-            for i in list_selection.curselection():
-                self.input_selected.append(list_selection.get(i)) 
+            for number_selected in list_selection.curselection():
+                self.input_selected.append(list_selection.get(number_selected)) 
             # * From the index of the selected categories to the selected categories.
             for input_categories in self.input_selected:
                 if input_categories in self.categories_dictionary.get(input_categories):
@@ -237,7 +240,7 @@ class Oscar_Scraper:
                 print("There was an error while requesting oscars.org website. Please retry or check your connection or the status of the website. See next the error message: ", e)
                 raise SystemExit(e)
 
-    def getNominees(self, years, i, category, number_nominees, number_winners):
+    def getNominees(self, years, number_categories, category, number_nominees, number_winners):
 
         """
         Sub-method.
@@ -249,11 +252,11 @@ class Oscar_Scraper:
         for number_people_nominated in range(number_nominees):   
             if number_winners == 1:
                 # NAME
-                path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-field-actor-name > h4::text".format(i+1, 4 + number_people_nominated)
+                path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1, 4 + number_people_nominated)
                 nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string
             if number_winners == 2:
                  # NAME
-                path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-field-actor-name > h4::text".format(i+1, 5 + number_people_nominated)
+                path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1, 5 + number_people_nominated)
                 nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string
             
             if category == "Directing": # For Directing, titles and names are swapped on the website
@@ -263,11 +266,11 @@ class Oscar_Scraper:
 
             # FILM
             if number_winners == 1:
-                path_film = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-title > span::text".format(i+1, 4 + number_people_nominated)
+                path_film = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-title > span::text".format(number_categories+1, 4 + number_people_nominated)
                 nominee_film = ''.join(self.links['oscars'][years].css(path_film).extract()) # ''.join() transforms the list produced by the selector into a string
                 nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
             if number_winners == 2:
-                path_film = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-title > span::text".format(i+1, 5 + number_people_nominated)
+                path_film = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-title > span::text".format(number_categories+1, 5 + number_people_nominated)
                 nominee_film = ''.join(self.links['oscars'][years].css(path_film).extract()) # ''.join() transforms the list produced by the selector into a string
                 nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
             if category == "Directing": # For Directing, titles and names are swapped on the website
@@ -279,7 +282,7 @@ class Oscar_Scraper:
             self.list_category.append(category)
             self.list_results.append("Nominee")
 
-    def getWinners(self, years, i, category, number_winners):
+    def getWinners(self, years, number_categories, category, number_winners):
         """
         Sub-method.
         It takes itself, the index of which year it is, the index of which category it is, the category and the number of winners
@@ -289,7 +292,7 @@ class Oscar_Scraper:
 
         if number_winners == 1: # 1 Winner
         # NAME
-            path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div.views-row.views-row-1.views-row-odd.views-row-first.views-row-last > div.views-field.views-field-field-actor-name > h4::text".format(i+1)
+            path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div.views-row.views-row-1.views-row-odd.views-row-first.views-row-last > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1)
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string
 
             if category == "Directing": # For Directing, titles and names are swapped on the website
@@ -299,7 +302,7 @@ class Oscar_Scraper:
             
         
             # FIlM
-            path_film = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div.views-row.views-row-1.views-row-odd.views-row-first.views-row-last > div.views-field.views-field-title > span::text'.format(i+1)
+            path_film = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div.views-row.views-row-1.views-row-odd.views-row-first.views-row-last > div.views-field.views-field-title > span::text'.format(number_categories+1)
             nominee_film = ''.join(self.links['oscars'][years].css(path_film).extract()) # ''.join() transforms the list produced by the selector into a string
             nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
 
@@ -315,7 +318,7 @@ class Oscar_Scraper:
 
         if number_winners == 2: # 2 Winners
             # NAME 1st Winner 
-            path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2) > div.views-field.views-field-field-actor-name > h4::text".format(i+1)
+            path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1)
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string4
 
             if category == "Directing": # For Directing, titles and names are swapped on the website
@@ -328,7 +331,7 @@ class Oscar_Scraper:
             self.list_results.append("Tie-winner")
 
             # NAME 2st Winner 
-            path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(3) > div.views-field.views-field-field-actor-name > h4::text".format(i+1)
+            path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(3) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1)
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string4
 
             if category == "Directing": # For Directing, titles and names are swapped on the website
@@ -341,8 +344,8 @@ class Oscar_Scraper:
             self.list_results.append("Tie-winner")
 
             # FILM
-            path_film1 = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2) > div.views-field.views-field-title > span::text'.format(i+1)
-            path_film2 = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(3) > div.views-field.views-field-title > span::text'.format(i+1)
+            path_film1 = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2) > div.views-field.views-field-title > span::text'.format(number_categories+1)
+            path_film2 = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(3) > div.views-field.views-field-title > span::text'.format(number_categories+1)
 
             nominee_film = ''.join(self.links['oscars'][years].css(path_film1).extract()) # ''.join() transforms the list produced by the selector into a string
             nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
@@ -375,15 +378,15 @@ class Oscar_Scraper:
         print("Extracting the data of the website ...")    
         for years in tqdm(range(len(self.links['oscars']))):
             categories = self.links['oscars'][years].css('#quicktabs-tabpage-honorees-0 > div > div.view-content > div.view-grouping > div.view-grouping-header > h2::text').extract()    
-            for i in range(len(categories)):
+            for number_categories in range(len(categories)):
                 
-                if categories[i] in self.selected_categories:
+                if categories[number_categories] in self.selected_categories:
                     
                     # Need the number of winners (might be ties) and nominated          
-                    path_nominated = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:last-child".format(i+1)
+                    path_nominated = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:last-child".format(number_categories+1)
                     number_of_film_nominated = int(''.join(self.links['oscars'][years].css(path_nominated).extract()).split("views-row-")[1])
 
-                    path_winner = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2)".format(i+1)
+                    path_winner = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2)".format(number_categories+1)
                     trial = ''.join(self.links['oscars'][years].css(path_winner).extract()).split("views-row-first views-row-last") # If 1 winner then it splits the string into 1 list of 2 elements, if 2 winners, it does nothing
                     if len(trial) == 2:
                         number_winners = 1
@@ -395,11 +398,11 @@ class Oscar_Scraper:
 
                     ## WINNERS                 
                     
-                    self.getWinners(years, i, categories[i], number_winners)     
+                    self.getWinners(years, number_categories, categories[number_categories], number_winners)     
                     
                     ## NOMINEES
                     
-                    self.getNominees(years, i, categories[i], number_of_film_nominated, number_winners)   
+                    self.getNominees(years, number_categories, categories[number_categories], number_of_film_nominated, number_winners)   
 
                     
         self.data = {
@@ -414,7 +417,7 @@ class Oscar_Scraper:
         
 
 
-    def getINDIVIDUALS(self):
+    def printINDIVIDUALS(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
         individuals = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_individuals]]
@@ -425,15 +428,17 @@ class Oscar_Scraper:
         df = df.set_index(['year','category'])
         individuals = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_individuals]]
         individuals.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns 
-        i = 0
-        while os.path.exists("data\Individuals%s.csv" % i):
-            i += 1
-        individuals.to_csv("data\Individuals%s.csv" % i)
         
-        return(print("The dataframe was saved as Individuals%s.csv in your working directory." % i))
+        # Creation of the csv file. We store each iteration of the dataframe separately
+        number_of_files = 0
+        while os.path.exists("data\Individuals%s.csv" % number_of_files):
+            number_of_files += 1
+        individuals.to_csv("data\Individuals%s.csv" % number_of_files)
+        
+        return(print("The dataframe was saved as Individuals%s.csv in your working directory." % number_of_files))
     
         
-    def getFILMS(self):
+    def printFILMS(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
         films = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_films]]
@@ -445,19 +450,22 @@ class Oscar_Scraper:
         df = df.set_index(['year', 'category'])
         films = df.loc(axis=0)[pd.IndexSlice[:, self.categories_films]]
         films.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns 
-        films.columns = ('film', 'Studio/Creator(s)', 'result',"gender","birthdate")        
-        i = 0
-        while os.path.exists("data\Films%s.csv" % i):
-            i += 1
-        films.to_csv("data\Films%s.csv" % i)
-        return(print("The dataframe was saved as Films%s.csv in your working directory." % i))
+        films.columns = ('film', 'Studio/Creator(s)', 'result',"gender","birthdate") 
+               
+        # Creation of the csv file. We store each iteration of the dataframe separately
+        number_of_files = 0
+        while os.path.exists("data\Films%s.csv" % number_of_files):
+            number_of_files += 1
+        films.to_csv("data\Films%s.csv" % number_of_files)
+        return(print("The dataframe was saved as Films%s.csv in your working directory." % number_of_files))
 
      #creating big dataframe with all data
+    """  # ! OBSOLETE ?
     def getAllCategories(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
         return(df)
-        
+    """  
         
     def getAPI_TMDB(self):
 
@@ -468,7 +476,7 @@ class Oscar_Scraper:
         Returns nothing
         
         """
-        i = 1
+        
         wrongfilms = []
         count_indiv_records = -1
         API_KEY_MDB = "a68690ebf69567801e68c26ee82d7787"
@@ -567,23 +575,23 @@ class Oscar_Scraper:
             print("There was an error while requesting the API of TheMovieDataBase website. Please retry or check your connection or the status of the website. See next the error message: ", e)
             raise SystemExit(e)
         
-        for i in tqdm(range(len(self.data['film']))): 
-            if self.list_gender[i] == 1:
-                self.list_gender[i] = "Female"
-            elif self.list_gender[i] == 2:
-                self.list_gender[i] = "Male"
-            elif self.list_gender[i] == 3:
-                self.list_gender[i] = "Non-binary"
+        for individuals in tqdm(range(len(self.data['film']))): 
+            if self.list_gender[individuals] == 1:
+                self.list_gender[individuals] = "Female"
+            elif self.list_gender[individuals] == 2:
+                self.list_gender[individuals] = "Male"
+            elif self.list_gender[individuals] == 3:
+                self.list_gender[individuals] = "Non-binary"
 
-            if np.nan not in [self.list_birthday[i]]:
-                self.list_birthday[i] = str(self.list_birthday[i][0:4]) # We keep only the year and transform from string to integer
+            if np.nan not in [self.list_birthday[individuals]]:
+                self.list_birthday[individuals] = str(self.list_birthday[individuals][0:4]) # We keep only the year and transform from string to integer
 
             
         self.data['gender'] = self.list_gender
         self.data['birthday'] = self.list_birthday
 
         wfdf = pd.DataFrame(wrongfilms)
-        wfdf.to_csv('data/corrections/wfdf.csv')  # all the wrong names of the films in film categories
+        wfdf.to_csv(os.path.join(self.links['path'][0],'wfdf.csv'))  # all the wrong names of the films in film categories
         
                                         
     def TMDB_get(self, response_search, film_number):
@@ -652,22 +660,22 @@ class Oscar_Scraper:
         2) It loads the dataframes precedently created, then correct them 
         Returns nothing.
         """
-        if corrected == False:
+        if corrected == False: # Part used to debug
             question = input("Film (f) or Name (n) or Both (b) or Pass (p)?")
             if question == "f":
                 answer = input("Bon titre film ?")
                 self.list_films_wrong.append(self.data["film"][film_number])
                 self.list_films_right.append(answer)
                 self.data["film"][film_number] = answer
-                pd.DataFrame(self.list_films_right).to_csv('data\corrections\list_films_right.csv',index=False) 
-                pd.DataFrame(self.list_films_wrong).to_csv('data\corrections\list_films_wrong.csv',index=False) 
+                pd.DataFrame(self.list_films_right).to_csv(os.path.join(self.links['path'][0],'list_films_right.csv'),index=False) 
+                pd.DataFrame(self.list_films_wrong).to_csv(os.path.join(self.links['path'][0],'list_films_wrong.csv'),index=False) 
             if question == "n":
                 answer = input("Bon nom ?")
                 self.list_names_wrong.append(self.data["name"][film_number])
                 self.list_names_right.append(answer)           
                 self.data["name"][film_number] = answer
-                pd.DataFrame(self.list_names_right).to_csv('data\corrections\list_names_right.csv',index=False) 
-                pd.DataFrame(self.list_names_wrong).to_csv('data\corrections\list_names_wrong.csv',index=False) 
+                pd.DataFrame(self.list_names_right).to_csv(os.path.join(self.links['path'][0],'list_names_right.csv'),index=False) 
+                pd.DataFrame(self.list_names_wrong).to_csv(os.path.join(self.links['path'][0],'list_names_wrong.csv'),index=False) 
             if question == "b":
                 answer1 = input("Bon titre film ?")
                 answer2 = input("Bon nom ?")
@@ -677,38 +685,39 @@ class Oscar_Scraper:
                 self.list_names_right.append(answer2)
                 self.data["film"][film_number] = answer1
                 self.data["name"][film_number] = answer2
-                pd.DataFrame(self.list_names_right).to_csv('data\corrections\list_names_right.csv',index=False) 
-                pd.DataFrame(self.list_names_wrong).to_csv('data\corrections\list_names_wrong.csv',index=False)
-                pd.DataFrame(self.list_films_right).to_csv('data\corrections\list_films_right.csv',index=False) 
-                pd.DataFrame(self.list_films_wrong).to_csv('data\corrections\list_films_wrong.csv',index=False) 
+                pd.DataFrame(self.list_names_right).to_csv(os.path.join(self.links['path'][0],'list_names_right.csv'),index=False) 
+                pd.DataFrame(self.list_names_wrong).to_csv(os.path.join(self.links['path'][0],'list_names_wrong.csv'),index=False)
+                pd.DataFrame(self.list_films_right).to_csv(os.path.join(self.links['path'][0],'list_films_right.csv'),index=False) 
+                pd.DataFrame(self.list_films_wrong).to_csv(os.path.join(self.links['path'][0],'list_films_wrong.csv'),index=False) 
             if question == "p":
                 pass
 
-        if corrected == True:
-            list_films_right = pd.read_csv("data\corrections\list_films_right.csv")
-            list_films_wrong = pd.read_csv("data\corrections\list_films_wrong.csv")
-            list_names_right = pd.read_csv("data\corrections\list_names_right.csv")
-            list_names_wrong = pd.read_csv("data\corrections\list_names_wrong.csv")
+        if corrected == True: # Part actually used to loead 
+            list_films_right = pd.read_csv(os.path.join(self.links['path'][0],"list_films_right.csv"))
+            list_films_wrong = pd.read_csv(os.path.join(self.links['path'][0],"list_films_wrong.csv"))
+            list_names_right = pd.read_csv(os.path.join(self.links['path'][0],"list_names_right.csv"))
+            list_names_wrong = pd.read_csv(os.path.join(self.links['path'][0],"list_names_wrong.csv"))
             l_films = len(list_films_right)
             l_names = len(list_names_right)
             l_data = len(self.data["film"])
             
-            for i in range(max(l_films,l_names)):
-                if i < l_names:
-                    self.list_names_right.append(list_names_right.values.tolist()[i][0])
-                    self.list_names_wrong.append(list_names_wrong.values.tolist()[i][0])
-                if i < l_films:
-                    self.list_films_right.append(list_films_right.values.tolist()[i][0])
-                    self.list_films_wrong.append(list_films_wrong.values.tolist()[i][0])
+            # Attribute the correction to the... correct film or individual
+            for max_length_correction in range(max(l_films,l_names)):
+                if max_length_correction < l_names:
+                    self.list_names_right.append(list_names_right.values.tolist()[max_length_correction][0])
+                    self.list_names_wrong.append(list_names_wrong.values.tolist()[max_length_correction][0])
+                if max_length_correction < l_films:
+                    self.list_films_right.append(list_films_right.values.tolist()[max_length_correction][0])
+                    self.list_films_wrong.append(list_films_wrong.values.tolist()[max_length_correction][0])
                     
-            for i in range(l_data):
-                for y in range(max(l_films,l_names)):
-                    if y < l_films:
-                        if self.data['film'][i] == self.list_films_wrong[y]:
-                            self.data['film'][i] = self.list_films_right[y]
-                    if y < l_names:       
-                        if self.data['name'][i] == self.list_names_wrong[y]:
-                            self.data['name'][i] = self.list_names_right[y]
+            for max_length_data in range(l_data):
+                for max_length_correction in range(max(l_films,l_names)):
+                    if max_length_correction < l_films:
+                        if self.data['film'][max_length_data] == self.list_films_wrong[max_length_correction]:
+                            self.data['film'][max_length_data] = self.list_films_right[max_length_correction]
+                    if max_length_correction < l_names:       
+                        if self.data['name'][max_length_data] == self.list_names_wrong[max_length_correction]:
+                            self.data['name'][max_length_data] = self.list_names_right[max_length_correction]
 
    
     def Run(self):
@@ -716,11 +725,11 @@ class Oscar_Scraper:
             self.getHTML()
             self.getDATA()
             self.getAPI_TMDB()
-            if any(self.selected_categories[i] in self.categories_individuals for i in range(len(self.selected_categories))):
-                self.getINDIVIDUALS()
+            if any(self.selected_categories[number_categories] in self.categories_individuals for number_categories in range(len(self.selected_categories))):
+                self.printINDIVIDUALS()
                 self.saveINDIVIDUALS()
-            if any(self.selected_categories[i] in self.categories_films for i in range(len(self.selected_categories))):
-                self.getFILMS()
+            if any(self.selected_categories[number_categories] in self.categories_films for number_categories in range(len(self.selected_categories))):
+                self.printFILMS()
                 self.saveFILMS()
             input("Press any key to exit:")
             
@@ -728,7 +737,8 @@ class Oscar_Scraper:
         
                  
             
-test = Oscar_Scraper()
+if __name__ == "__main__": # execute only if run as a script
+    Scrapper = Oscar_Scraper()
 
 
 
