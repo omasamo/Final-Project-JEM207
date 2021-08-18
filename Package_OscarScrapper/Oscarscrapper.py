@@ -1,6 +1,6 @@
 #####################################################################
 #   THE OSCARSCRAPPER, by YANN AUBINEAU AND SAMUEL BOZON            #
-#   yann.aubineau@gmail.com         @samuel
+#   yann.aubineau@gmail.com         @samuel.bozon@gmail.com
 #   2021
 #####################################################################
 
@@ -37,6 +37,8 @@ class Oscar_Scraper:
     list_films_right = []
     list_names_wrong = []
     list_films_wrong = []
+    list_originallanguage = []
+    list_genreids = []
     
     def __init__(self):
         """
@@ -59,18 +61,14 @@ class Oscar_Scraper:
                     "Actor in a Leading Role": ['Actor', 'Actor in a Leading Role'],
                     "Actress in a Leading Role": ['Actress', 'Actress in a Leading Role'],
                     "Directing": ["Directing"],
-                    "Best Picture": ['Outstanding Picture', 'Outstanding Production','Best Motion Picture', 'Best Picture'],
-                    "Art Direction" : ['Art Direction', 'Production Design'],
-                    "Best Foreign Language Film": ["Foreign Language Film"]
+                    "Best Picture": ['Outstanding Picture', 'Outstanding Production','Best Motion Picture', 'Best Picture']
                     }
         
         # * List of categories related to individuals.
 
         self.categories_individuals = ['Directing', 'Actor', 'Actor in a Leading Role', 'Actress', 'Actress in a Leading Role']
 
-        self.categories_films = ['Outstanding Picture', 'Outstanding Production','Best Motion Picture', 'Best Picture',
-        "Art Direction", 'Production Design',
-        "Foreign Language Film"]
+        self.categories_films = ['Outstanding Picture', 'Outstanding Production','Best Motion Picture', 'Best Picture']
 
         # * Stores the user's selected categories to fetch
         self.selected_categories = []
@@ -264,7 +262,7 @@ class Oscar_Scraper:
                 path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1, 5 + number_people_nominated)
                 nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string
             
-            if category == "Directing": # For Directing, titles and names are swapped on the website
+            if category == "Directing" or category in self.categories_films: # For Directing, titles and names are swapped on the website
                 self.list_films.append(nominee_name)
             else:
                 self.list_names.append(nominee_name)
@@ -278,7 +276,7 @@ class Oscar_Scraper:
                 path_film = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child({}) > div.views-field.views-field-title > span::text".format(number_categories+1, 5 + number_people_nominated)
                 nominee_film = ''.join(self.links['oscars'][years].css(path_film).extract()) # ''.join() transforms the list produced by the selector into a string
                 nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
-            if category == "Directing": # For Directing, titles and names are swapped on the website
+            if category == "Directing" or category in self.categories_films: # For Directing, titles and names are swapped on the website
                 self.list_names.append(nominee_film)
             else:
                 self.list_films.append(nominee_film)
@@ -300,7 +298,7 @@ class Oscar_Scraper:
             path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div.views-row.views-row-1.views-row-odd.views-row-first.views-row-last > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1)
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string
 
-            if category == "Directing": # For Directing, titles and names are swapped on the website
+            if category == "Directing" or category in self.categories_films: # For Directing, titles and names are swapped on the website
                 self.list_films.append(nominee_name)
             else:
                 self.list_names.append(nominee_name)
@@ -311,7 +309,7 @@ class Oscar_Scraper:
             nominee_film = ''.join(self.links['oscars'][years].css(path_film).extract()) # ''.join() transforms the list produced by the selector into a string
             nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
 
-            if category == "Directing":# For Directing, titles and names are swapped on the website
+            if category == "Directing" or category in self.categories_films:# For Directing, titles and names are swapped on the website
                 self.list_names.append(nominee_film)
             else:
                 self.list_films.append(nominee_film)
@@ -328,7 +326,7 @@ class Oscar_Scraper:
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string4
 
             # For Directing, titles and names are swapped on the website
-            if category == "Directing": 
+            if category == "Directing" or category in self.categories_films:
                 self.list_films.append(nominee_name)
             else:
                 self.list_names.append(nominee_name)
@@ -342,7 +340,7 @@ class Oscar_Scraper:
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string4
 
             # For Directing, titles and names are swapped on the website
-            if category == "Directing": 
+            if category == "Directing" or category in self.categories_films:
                 self.list_films.append(nominee_name)
             else:
                 self.list_names.append(nominee_name)
@@ -359,7 +357,7 @@ class Oscar_Scraper:
             winner1_film = winner1_film.replace("\n", "") # Cleaning up the string
 
             # For Directing, titles and names are swapped on the website
-            if category == "Directing":
+            if category == "Directing" or category in self.categories_films:
                 self.list_names.append(winner1_film)
             else:
                 self.list_films.append(winner1_film)
@@ -368,7 +366,7 @@ class Oscar_Scraper:
             winner2_film = winner2_film.replace("\n", "") # Cleaning up the string
 
             # For Directing, titles and names are swapped on the website
-            if category == "Directing":
+            if category == "Directing" or category in self.categories_films:
                 self.list_names.append(winner2_film)
             else:
                 self.list_films.append(winner2_film)        
@@ -451,15 +449,13 @@ class Oscar_Scraper:
         df = pd.DataFrame(self.data)
         df = df.set_index(['year','category'])
         films = df.loc(axis = 0)[pd.IndexSlice[:, self.categories_films]]
-        films.columns = ('film', 'Studio/Creator(s)', 'result',"gender","birthdate")
         return(print(films))
 
     def saveFILMS(self):
         df = pd.DataFrame(self.data)
         df = df.set_index(['year', 'category'])
         films = df.loc(axis=0)[pd.IndexSlice[:, self.categories_films]]
-        films.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns 
-        films.columns = ('film', 'Studio/Creator(s)', 'result',"gender","birthdate") 
+        films.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns
                
         # Creation of the csv file. We store each iteration of the dataframe separately
         number_of_files = 0
@@ -468,13 +464,7 @@ class Oscar_Scraper:
         films.to_csv("data\Films%s.csv" % number_of_files)
         return(print("The dataframe was saved as Films%s.csv in your working directory." % number_of_files))
 
-     #creating big dataframe with all data
-    """  # ! OBSOLETE ?
-    def getAllCategories(self):
-        df = pd.DataFrame(self.data)
-        df = df.set_index(['year','category'])
-        return(df)
-    """  
+
         
     def getAPI_TMDB(self):
 
@@ -497,6 +487,8 @@ class Oscar_Scraper:
         try:
             for film_number in tqdm(range(len(self.data['film']))):
                 if self.data['category'][film_number] in self.categories_individuals:
+                    self.list_originallanguage.append(np.nan)
+                    self.list_genreids.append(np.nan)
                     count_indiv_records += 1
                     title_standard = quote(self.data['film'][film_number])
                     response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,1)).text)
@@ -552,32 +544,68 @@ class Oscar_Scraper:
                                                 self.list_gender.append(response_person["gender"])
 
                 elif self.data['category'][film_number] in self.categories_films: # Special condition if we are not looking for the data on individual (winner of the award is a company for example)
-                    self.list_birthday.append(np.nan)
-                    self.list_gender.append(np.nan)
                     title_standard = quote(self.data['film'][film_number])
                     response_search = json.loads(
                         requests.get(URL_MDB_SEARCH.format(API_KEY_MDB, title_standard, 1)).text)
                     try:
                         if response_search['total_results'] == 0:
-                            print(str(response_search['total_results']) + '--' + str(self.data["film"][film_number]))
                             wrongfilms.append(self.data["film"][film_number])
-                        for number_results in range(len(response_search["results"])):
-                            if jellyfish.damerau_levenshtein_distance(
-                                    str(response_search["results"][number_results].get("title")),
-                                    str(self.data["film"][film_number])) < 3:
+                            self.list_originallanguage.append('not found')
+                            self.list_genreids.append('not found')
+                            self.list_birthday.append(np.nan)
+                            self.list_gender.append(np.nan)
 
-                                if response_search["results"][number_results].get("release_date") not in (
-                                        None, 0, ''):
-                                    if (int(response_search["results"][number_results]["release_date"][0:4]) in (
-                                            self.data["year"][film_number], self.data["year"][film_number] - 1,
-                                            self.data["year"][film_number] - 2,
-                                            self.data["year"][film_number] - 3)):
-                                        i += 1
-                            else:
-                                i += 1
+
+                        else:
+                            found = False
+                            added = False
+                            for number_results in range(len(response_search["results"])):
+                                if jellyfish.damerau_levenshtein_distance(
+                                        str(response_search["results"][number_results].get("title")),
+                                        str(self.data["film"][film_number])) < 4 and found == False:
+                                    if response_search["results"][number_results].get("release_date") not in (
+                                            None, 0, ''):
+                                        if (int(response_search["results"][number_results]["release_date"][0:4]) in (
+                                                self.data["year"][film_number], self.data["year"][film_number] - 1,
+                                                self.data["year"][film_number] - 2,
+                                                self.data["year"][film_number] - 3)):
+
+                                            self.list_originallanguage.append(
+                                                response_search["results"][number_results].get("original_language"))
+
+                                            self.list_genreids.append(
+                                                response_search["results"][number_results].get("genre_ids"))
+                                            self.list_birthday.append(np.nan)
+                                            self.list_gender.append(np.nan)
+
+                                            found = True
+
+                            if found == False:
+                                self.list_originallanguage.append('not found')
+                                self.list_genreids.append('not found')
+                                self.list_birthday.append(np.nan)
+                                self.list_gender.append(np.nan)
+                                wrongfilms.append(self.data["film"][film_number])
+
+                                found = True
+
+
                     except KeyError:
-                        #print('Key Error' + '--' + str(self.data["film"][film_number]))
+                        print('Key Error' + '--' + str(self.data["film"][film_number]))
+                        print('rok' + str(self.data["year"][film_number]) + '---' + str(
+                            print(self.data["category"][film_number])))
                         wrongfilms.append(self.data["film"][film_number])
+                        self.list_originallanguage.append('not foundKeyError')
+                        self.list_genreids.append('not foundKeyError')
+                        self.list_birthday.append('n/a')
+                        self.list_gender.append('n/a')
+                else:
+                    print(self.data['category'][film_number] + '---' + self.data['film'][film_number])
+                    print('wrong category')
+                    self.list_originallanguage.append('wrong category')
+                    self.list_genreids.append('wrong category')
+                    self.list_birthday.append(np.nan)
+                    self.list_gender.append(np.nan)
             else:
                 pass
 
@@ -601,6 +629,8 @@ class Oscar_Scraper:
     
         self.data['gender'] = self.list_gender
         self.data['birthday'] = self.list_birthday
+        self.data['genreids'] = self.list_genreids
+        self.data['original_language'] = self.list_originallanguage
 
         wfdf = pd.DataFrame(wrongfilms)
         wfdf.to_csv(os.path.join(self.links['path'][0],'wfdf.csv'))  # all the wrong names of the films in film categories
