@@ -1,4 +1,9 @@
-### OOP   ### ROTTENTOMATOES
+#####################################################################
+#   THE OSCARSCRAPPER, by YANN AUBINEAU AND SAMUEL BOZON            #
+#   yann.aubineau@gmail.com         @samuel
+#   2021
+#####################################################################
+
 
 import time
 import requests
@@ -317,11 +322,13 @@ class Oscar_Scraper:
 
 
         if number_winners == 2: # 2 Winners
+
             # NAME 1st Winner 
             path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1)
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string4
 
-            if category == "Directing": # For Directing, titles and names are swapped on the website
+            # For Directing, titles and names are swapped on the website
+            if category == "Directing": 
                 self.list_films.append(nominee_name)
             else:
                 self.list_names.append(nominee_name)
@@ -334,7 +341,8 @@ class Oscar_Scraper:
             path_name = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(3) > div.views-field.views-field-field-actor-name > h4::text".format(number_categories+1)
             nominee_name = ''.join(self.links['oscars'][years].css(path_name).extract()) # ''.join() transforms the list produced by the selector into a string4
 
-            if category == "Directing": # For Directing, titles and names are swapped on the website
+            # For Directing, titles and names are swapped on the website
+            if category == "Directing": 
                 self.list_films.append(nominee_name)
             else:
                 self.list_names.append(nominee_name)
@@ -347,18 +355,20 @@ class Oscar_Scraper:
             path_film1 = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2) > div.views-field.views-field-title > span::text'.format(number_categories+1)
             path_film2 = '#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(3) > div.views-field.views-field-title > span::text'.format(number_categories+1)
 
-            nominee_film = ''.join(self.links['oscars'][years].css(path_film1).extract()) # ''.join() transforms the list produced by the selector into a string
-            nominee_film = nominee_film.replace("\n", "") # Cleaning up the string
+            winner1_film = ''.join(self.links['oscars'][years].css(path_film1).extract()) # ''.join() transforms the list produced by the selector into a string
+            winner1_film = winner1_film.replace("\n", "") # Cleaning up the string
 
-            if category == "Directing":# For Directing, titles and names are swapped on the website
-                self.list_names.append(nominee_film)
+            # For Directing, titles and names are swapped on the website
+            if category == "Directing":
+                self.list_names.append(winner1_film)
             else:
-                self.list_films.append(nominee_film)
+                self.list_films.append(winner1_film)
 
             winner2_film = ''.join(self.links['oscars'][years].css(path_film2).extract()) # ''.join() transforms the list produced by the selector into a string
             winner2_film = winner2_film.replace("\n", "") # Cleaning up the string
 
-            if category == "Directing":# For Directing, titles and names are swapped on the website
+            # For Directing, titles and names are swapped on the website
+            if category == "Directing":
                 self.list_names.append(winner2_film)
             else:
                 self.list_films.append(winner2_film)        
@@ -388,13 +398,11 @@ class Oscar_Scraper:
 
                     path_winner = "#quicktabs-tabpage-honorees-0 > div > div.view-content > div:nth-child({}) > div.view-grouping-content > div:nth-child(2)".format(number_categories+1)
                     trial = ''.join(self.links['oscars'][years].css(path_winner).extract()).split("views-row-first views-row-last") # If 1 winner then it splits the string into 1 list of 2 elements, if 2 winners, it does nothing
+                    
                     if len(trial) == 2:
                         number_winners = 1
                     elif len(trial) == 1:
                         number_winners = 2
-                    else:
-                        print("problem")
-
 
                     ## WINNERS                 
                     
@@ -412,7 +420,8 @@ class Oscar_Scraper:
             'name': self.list_names,
             'result':self.list_results
         }            
-    
+
+        # Process the corrections on the data scrapped
         self.Correction(0,True)
         
 
@@ -492,56 +501,57 @@ class Oscar_Scraper:
                     title_standard = quote(self.data['film'][film_number])
                     response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,1)).text)
                     if response_search["total_results"] != 0:        
-                        if self.TMDB_get(response_search, film_number) == True:
+                        if self.TMDB_get(response_search, film_number) == True: # A movie-individual pair was found, we look for the individual data now
 
                             response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
                             if response_person.get("success") != False: # Check if the API find a person
 
                                 if response_person["birthday"] in (None,0):
-                                    pass
+                                    self.list_birthday.append(np.nan)
+                                else:
+                                    self.list_birthday.append(response_person["birthday"])
                                 
                                 if response_person["gender"] in (None,0):
-                                    pass
-                                self.list_birthday.append(response_person["birthday"])
-                                self.list_gender.append(response_person["gender"])
-                            else:
-                                pass
-                        else:
+                                    self.list_birthday.append(np.nan)
+                                else:
+                                    self.list_gender.append(response_person["gender"])
+
+                        else: # Happens if not a single movie-actor pair was found in the first page (hence the 2)
                             response_search = json.loads(requests.get(URL_MDB_SEARCH.format(API_KEY_MDB,title_standard,2)).text)
                             if response_search["total_results"] != 0:        
-                                if self.TMDB_get(response_search, film_number) == True:
+                                if self.TMDB_get(response_search, film_number) == True: # A movie-individual pair was found, we look for the individual data now
                                     response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
                                     if response_person.get("success") != False: # Check if the API find a person
                                         if response_person["birthday"] in (None,0):
-                                            pass
+                                            self.list_birthday.append(np.nan)
+                                        else:
+                                            self.list_birthday.append(response_person["birthday"])
                                         
                                         if response_person["gender"] in (None,0):
-                                            pass
-                                        self.list_birthday.append(response_person["birthday"])
-                                        self.list_gender.append(response_person["gender"])
-                                    else:
-                                        pass
-                                else:
-                                    # specific problems with some 1930's movies
+                                            self.list_birthday.append(np.nan)
+                                        else:
+                                            self.list_gender.append(response_person["gender"])
+                                    
+                                else:  # specific problems with some 1930's movies
                                     URL_MDB_SEARCH1930 = "https://api.themoviedb.org/3/search/movie?api_key={}&language=en-US&query={}&page={}&include_adult=false&year=1930"
                                     response_search = json.loads(requests.get(URL_MDB_SEARCH1930.format(API_KEY_MDB,title_standard,1)).text)
                                     if response_search["total_results"] != 0:        
-                                        if self.TMDB_get(response_search, film_number) == True:
+                                        if self.TMDB_get(response_search, film_number) == True: # A movie-individual pair was found, we look for the individual data now
                                             response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
+
                                             if response_person.get("success") != False: # Check if the API find a person
                                                 
-                                                if response_person["birthday"] in (None,0):
-                                                    pass
-                                                if response_person["gender"] in (None,0):
-                                                    pass
-                                                self.list_birthday.append(response_person["birthday"])
-                                                self.list_gender.append(response_person["gender"])
+                                               if response_person["birthday"] in (None,0):
+                                                self.list_birthday.append(np.nan)
                                             else:
-                                                pass
-                    else:
-                        pass
-                        self.Correction(film_number, False)
-                elif self.data['category'][film_number] in self.categories_films:
+                                                self.list_birthday.append(response_person["birthday"])
+                                            
+                                            if response_person["gender"] in (None,0):
+                                                self.list_birthday.append(np.nan)
+                                            else:
+                                                self.list_gender.append(response_person["gender"])
+
+                elif self.data['category'][film_number] in self.categories_films: # Special condition if we are not looking for the data on individual (winner of the award is a company for example)
                     self.list_birthday.append(np.nan)
                     self.list_gender.append(np.nan)
                     title_standard = quote(self.data['film'][film_number])
@@ -571,10 +581,12 @@ class Oscar_Scraper:
             else:
                 pass
 
+        # Exception handling
         except requests.exceptions.RequestException as e:  
             print("There was an error while requesting the API of TheMovieDataBase website. Please retry or check your connection or the status of the website. See next the error message: ", e)
             raise SystemExit(e)
         
+        # Transformation of the data
         for individuals in tqdm(range(len(self.data['film']))): 
             if self.list_gender[individuals] == 1:
                 self.list_gender[individuals] = "Female"
@@ -586,7 +598,7 @@ class Oscar_Scraper:
             if np.nan not in [self.list_birthday[individuals]]:
                 self.list_birthday[individuals] = str(self.list_birthday[individuals][0:4]) # We keep only the year and transform from string to integer
 
-            
+    
         self.data['gender'] = self.list_gender
         self.data['birthday'] = self.list_birthday
 
@@ -638,17 +650,12 @@ class Oscar_Scraper:
                                         # self.Correction(film_number, False)
                                         
 
-                            else:
-                                pass
-                        else:
-                            pass
-
-                    else:
-                        pass
+        # Error handling      
         except requests.exceptions.RequestException as e:  
             print("There was an error while requesting oscars.org website. Please retry or check your connection or the status of the website. See next the error message: ", e)
             raise SystemExit(e)
-            
+        
+        # Return False if no movie-individual pair was found, and True if it was found
         return(found_individual)
                                 
 
@@ -663,22 +670,22 @@ class Oscar_Scraper:
         if corrected == False: # Part used to debug
             question = input("Film (f) or Name (n) or Both (b) or Pass (p)?")
             if question == "f":
-                answer = input("Bon titre film ?")
+                answer = input("Correct title ?")
                 self.list_films_wrong.append(self.data["film"][film_number])
                 self.list_films_right.append(answer)
                 self.data["film"][film_number] = answer
                 pd.DataFrame(self.list_films_right).to_csv(os.path.join(self.links['path'][0],'list_films_right.csv'),index=False) 
                 pd.DataFrame(self.list_films_wrong).to_csv(os.path.join(self.links['path'][0],'list_films_wrong.csv'),index=False) 
             if question == "n":
-                answer = input("Bon nom ?")
+                answer = input("Correct name ?")
                 self.list_names_wrong.append(self.data["name"][film_number])
                 self.list_names_right.append(answer)           
                 self.data["name"][film_number] = answer
                 pd.DataFrame(self.list_names_right).to_csv(os.path.join(self.links['path'][0],'list_names_right.csv'),index=False) 
                 pd.DataFrame(self.list_names_wrong).to_csv(os.path.join(self.links['path'][0],'list_names_wrong.csv'),index=False) 
             if question == "b":
-                answer1 = input("Bon titre film ?")
-                answer2 = input("Bon nom ?")
+                answer1 = input("Correct title ?")
+                answer2 = input("Cprrect name ?")
                 self.list_films_wrong.append(self.data["film"][film_number])
                 self.list_names_wrong.append(self.data["name"][film_number])
                 self.list_films_right.append(answer1)
@@ -692,7 +699,7 @@ class Oscar_Scraper:
             if question == "p":
                 pass
 
-        if corrected == True: # Part actually used to loead 
+        if corrected == True: # Part actually used to load the corrections
             list_films_right = pd.read_csv(os.path.join(self.links['path'][0],"list_films_right.csv"))
             list_films_wrong = pd.read_csv(os.path.join(self.links['path'][0],"list_films_wrong.csv"))
             list_names_right = pd.read_csv(os.path.join(self.links['path'][0],"list_names_right.csv"))
@@ -734,8 +741,6 @@ class Oscar_Scraper:
             input("Press any key to exit:")
             
             
-        
-                 
             
 if __name__ == "__main__": # execute only if run as a script
     Scrapper = Oscar_Scraper()
