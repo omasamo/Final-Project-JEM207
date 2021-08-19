@@ -139,13 +139,10 @@ class Oscar_Scraper:
             list_selection.itemconfig(each_item, bg = "white")
 
         self.user_imput = IntVar() #Basically Links Any Radiobutton With The Variable=i.
-        r1 = Radiobutton(window, text="Autorun (recommanded)", value=1, variable=self.user_imput)
+        r1 = Radiobutton(window, text="Autorun (recommended)", value=1, variable=self.user_imput)
         r1.pack(pady = 10, padx= 5)
         r2 = Radiobutton(window, text="Manual run", value=2, variable=self.user_imput)
         r2.pack(pady = 2, padx= 2)
-        
-        
-    
         exit_button = Button(window, text="Done", command= lambda:[fCategories(),fPopup(),fDates(), fExit()])
         exit_button.pack(pady=20)
         
@@ -482,7 +479,7 @@ class Oscar_Scraper:
         URL_MDB_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key={}&language=en-US&query={}&page={}&include_adult=false"
         URL_MDB_PERSON = "https://api.themoviedb.org/3/person/{}?api_key={}"
 
-        print("Requesting TheMovieDataBase API for the gender and birthdays ...")    
+        print("Requesting TheMovieDataBase API for the gender, birthdays, original language and genres...")
 
         try:
             for film_number in tqdm(range(len(self.data['film']))):

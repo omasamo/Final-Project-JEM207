@@ -1,0 +1,242 @@
+year,category,film,name,result,gender,birthday,genreids,original_language
+1983,Best Picture,Gandhi,"Richard Attenborough, Producer",Winner,,,"[18, 36]",en
+1983,Best Picture,E.T. The Extra-Terrestrial,"Steven Spielberg and Kathleen Kennedy, Producers",Nominee,,,"[878, 12, 10751, 14]",en
+1983,Best Picture,Missing,"Edward Lewis and Mildred Lewis, Producers",Nominee,,,"[18, 36, 9648, 53]",en
+1983,Best Picture,Tootsie,"Sydney Pollack and Dick Richards, Producers",Nominee,,,"[35, 10749]",en
+1983,Best Picture,The Verdict,"Richard D. Zanuck and David Brown, Producers",Nominee,,,[18],en
+1984,Best Picture,Terms of Endearment,"James L. Brooks, Producer",Winner,,,"[35, 18]",en
+1984,Best Picture,The Big Chill,"Michael Shamberg, Producer",Nominee,,,"[35, 18]",en
+1984,Best Picture,The Dresser,"Peter Yates, Producer",Nominee,,,[18],en
+1984,Best Picture,The Right Stuff,"Irwin Winkler and Robert Chartoff, Producers",Nominee,,,"[18, 36]",en
+1984,Best Picture,Tender Mercies,"Philip S. Hobel, Producer",Nominee,,,"[18, 10402, 10749]",en
+1985,Best Picture,Amadeus,"Saul Zaentz, Producer",Winner,,,"[10402, 18, 36]",en
+1985,Best Picture,The Killing Fields,"David Puttnam, Producer",Nominee,,,"[18, 36, 10752]",en
+1985,Best Picture,A Passage to India,"John Brabourne and Richard Goodwin, Producers",Nominee,,,"[18, 12, 36]",en
+1985,Best Picture,Places in the Heart,"Arlene Donovan, Producer",Nominee,,,"[18, 10751]",en
+1985,Best Picture,A Soldier's Story,"Norman Jewison, Ronald L. Schwary and Patrick Palmer, Producers",Nominee,,,"[18, 9648, 10752, 80]",en
+1986,Best Picture,Out of Africa,"Sydney Pollack, Producer",Winner,,,"[36, 10749, 18]",en
+1986,Best Picture,The Color Purple,"Steven Spielberg, Kathleen Kennedy, Frank Marshall and Quincy Jones, Producers",Nominee,,,[18],en
+1986,Best Picture,Kiss of the Spider Woman,"David Weisman, Producer",Nominee,,,[18],en
+1986,Best Picture,Prizzi's Honor,"John Foreman, Producer",Nominee,,,"[10749, 35, 80, 18]",en
+1986,Best Picture,Witness,"Edward S. Feldman, Producer",Nominee,,,"[80, 18, 10749, 53]",en
+1987,Best Picture,Platoon,"Arnold Kopelson, Producer",Winner,,,"[18, 10752, 28]",en
+1987,Best Picture,Children of a Lesser God,"Burt Sugarman and Patrick Palmer, Producers",Nominee,,,"[18, 10749]",en
+1987,Best Picture,Hannah and Her Sisters,"Robert Greenhut, Producer",Nominee,,,"[35, 18]",en
+1987,Best Picture,The Mission,"Fernando Ghia and David Puttnam, Producers",Nominee,,,"[12, 18, 28, 36]",en
+1987,Best Picture,A Room with a View,"Ismail Merchant, Producer",Nominee,,,"[18, 10749]",en
+1988,Best Picture,The Last Emperor,"Jeremy Thomas, Producer",Winner,,,"[18, 36]",en
+1988,Best Picture,Broadcast News,"James L. Brooks, Producer",Nominee,,,"[35, 10749]",en
+1988,Best Picture,Fatal Attraction,"Stanley R. Jaffe and Sherry Lansing, Producers",Nominee,,,"[18, 53]",en
+1988,Best Picture,Hope and Glory,"John Boorman, Producer",Nominee,,,"[18, 10752, 35, 36]",en
+1988,Best Picture,Moonstruck,"Patrick Palmer and Norman Jewison, Producers",Nominee,,,"[35, 18, 10749]",en
+1989,Best Picture,Rain Man,"Mark Johnson, Producer",Winner,,,[18],en
+1989,Best Picture,The Accidental Tourist,"Lawrence Kasdan, Charles Okun and Michael Grillo, Producers",Nominee,,,"[18, 10749, 35]",en
+1989,Best Picture,Dangerous Liaisons,"Norma Heyman and Hank Moonjean, Producers",Nominee,,,"[18, 10749]",en
+1989,Best Picture,Mississippi Burning,"Frederick Zollo and Robert F. Colesberry, Producers",Nominee,,,"[53, 80, 18]",en
+1989,Best Picture,Working Girl,"Douglas Wick, Producer",Nominee,,,"[35, 10749]",en
+1990,Best Picture,Driving Miss Daisy,"Richard D. Zanuck and Lili Fini Zanuck, Producers",Winner,,,[18],en
+1990,Best Picture,Born on the Fourth of July,"A. Kitman Ho and Oliver Stone, Producers",Nominee,,,"[18, 10752]",en
+1990,Best Picture,Dead Poets Society,"Steven Haft, Paul Junger Witt and Tony Thomas, Producers",Nominee,,,[18],en
+1990,Best Picture,Field of Dreams,"Lawrence Gordon and Charles Gordon, Producers",Nominee,,,"[18, 14]",en
+1990,Best Picture,My Left Foot: The Story of Christy Brown,"Noel Pearson, Producer",Nominee,,,[18],en
+1991,Best Picture,Dances With Wolves,"Jim Wilson and Kevin Costner, Producers",Winner,,,"[12, 18, 37]",en
+1991,Best Picture,Awakenings,"Walter F. Parkes and Lawrence Lasker, Producers",Nominee,,,[18],en
+1991,Best Picture,Ghost,"Lisa Weinstein, Producer",Nominee,,,"[14, 18, 53, 9648, 10749]",en
+1991,Best Picture,"The Godfather, Part III","Francis Ford Coppola, Producer",Nominee,,,"[80, 18, 53]",en
+1991,Best Picture,Goodfellas,"Irwin Winkler, Producer",Nominee,,,"[18, 80]",en
+1992,Best Picture,The Silence of the Lambs,"Edward Saxon, Kenneth Utt and Ron Bozman, Producers",Winner,,,"[80, 18, 53, 27]",en
+1992,Best Picture,Beauty and the Beast,"Don Hahn, Producer",Nominee,,,"[10749, 10751, 16, 14]",en
+1992,Best Picture,Bugsy,"Mark Johnson, Barry Levinson and Warren Beatty, Producers",Nominee,,,"[80, 18, 9648]",en
+1992,Best Picture,JFK,"A. Kitman Ho and Oliver Stone, Producers",Nominee,,,"[18, 53, 36]",en
+1992,Best Picture,The Prince of Tides,"Barbra Streisand and Andrew Karsch, Producers",Nominee,,,"[18, 10749]",en
+1993,Best Picture,Unforgiven,"Clint Eastwood, Producer",Winner,,,[37],en
+1993,Best Picture,The Crying Game,"Stephen Woolley, Producer",Nominee,,,"[80, 18, 10749, 53]",en
+1993,Best Picture,A Few Good Men,"David Brown, Rob Reiner and Andrew Scheinman, Producers",Nominee,,,[18],en
+1993,Best Picture,Howards End,"Ismail Merchant, Producer",Nominee,,,"[18, 10749]",en
+1993,Best Picture,Scent of a Woman,"Martin Brest, Producer",Nominee,,,[18],en
+1994,Best Picture,Schindler's List,"Steven Spielberg, Gerald R. Molen and Branko Lustig, Producers",Winner,,,"[18, 36, 10752]",en
+1994,Best Picture,The Fugitive,"Arnold Kopelson, Producer",Nominee,,,"[18, 28, 53]",en
+1994,Best Picture,In the Name of the Father,"Jim Sheridan, Producer",Nominee,,,[18],en
+1994,Best Picture,The Piano,"Jan Chapman, Producer",Nominee,,,"[18, 10749]",en
+1994,Best Picture,The Remains of the Day,"Mike Nichols, John Calley and Ismail Merchant, Producers",Nominee,,,"[18, 10749]",en
+1995,Best Picture,Forrest Gump,"Wendy Finerman, Steve Tisch and Steve Starkey, Producers",Winner,,,"[35, 18, 10749]",en
+1995,Best Picture,Four Weddings and a Funeral,"Duncan Kenworthy, Producer",Nominee,,,"[35, 18, 10749]",en
+1995,Best Picture,Pulp Fiction,"Lawrence Bender, Producer",Nominee,,,"[53, 80]",en
+1995,Best Picture,Quiz Show,"Robert Redford, Michael Jacobs, Julian Krainin and Michael Nozik, Producers",Nominee,,,"[18, 36]",en
+1995,Best Picture,The Shawshank Redemption,"Niki Marvin, Producer",Nominee,,,"[18, 80]",en
+1996,Best Picture,Braveheart,"Mel Gibson, Alan Ladd, Jr. and Bruce Davey, Producers",Winner,,,"[28, 18, 36, 10752]",en
+1996,Best Picture,Apollo 13,"Brian Grazer, Producer",Nominee,,,"[18, 36]",en
+1996,Best Picture,Babe,"George Miller, Doug Mitchell and Bill Miller, Producers",Nominee,,,"[14, 18, 35, 10751]",en
+1996,Best Picture,The Postman ,"Mario Cecchi Gori, Vittorio Cecchi Gori and Gaetano Daniele, Producers",Nominee,,,"[35, 18, 10749]",it
+1996,Best Picture,Sense and Sensibility,"Lindsay Doran, Producer",Nominee,,,"[18, 10749]",en
+1997,Best Picture,The English Patient,"Saul Zaentz, Producer",Winner,,,"[18, 10749, 10752]",en
+1997,Best Picture,Fargo,"Ethan Coen, Producer",Nominee,,,"[80, 18, 53]",en
+1997,Best Picture,Jerry Maguire,"James L. Brooks, Laurence Mark, Richard Sakai and Cameron Crowe, Producers",Nominee,,,"[35, 18, 10749]",en
+1997,Best Picture,Secrets & Lies,"Simon Channing-Williams, Producer",Nominee,,,[18],en
+1997,Best Picture,Shine,"Jane Scott, Producer",Nominee,,,[18],en
+1998,Best Picture,Titanic,"James Cameron and Jon Landau, Producers",Winner,,,"[18, 10749]",en
+1998,Best Picture,As Good as It Gets,"James L. Brooks, Bridget Johnson and Kristi Zea, Producers",Nominee,,,"[35, 10749]",en
+1998,Best Picture,The Full Monty,"Uberto Pasolini, Producer",Nominee,,,[35],en
+1998,Best Picture,Good Will Hunting,"Lawrence Bender, Producer",Nominee,,,[18],en
+1998,Best Picture,L.A. Confidential,"Arnon Milchan, Curtis Hanson and Michael Nathanson, Producers",Nominee,,,"[80, 18, 9648, 53]",en
+1999,Best Picture,Shakespeare in Love,"David Parfitt, Donna Gigliotti, Harvey Weinstein, Edward Zwick and Marc Norman, Producers",Winner,,,"[10749, 36, 35]",en
+1999,Best Picture,Elizabeth,"Alison Owen, Eric Fellner and Tim Bevan, Producers",Nominee,,,"[18, 36]",en
+1999,Best Picture,Life Is Beautiful,"Elda Ferri and Gianluigi Braschi, Producers",Nominee,,,"[35, 18]",it
+1999,Best Picture,Saving Private Ryan,"Steven Spielberg, Ian Bryce, Mark Gordon and Gary Levinsohn, Producers",Nominee,,,"[18, 36, 10752]",en
+1999,Best Picture,The Thin Red Line,"Robert Michael Geisler, John Roberdeau and Grant Hill, Producers",Nominee,,,"[18, 36, 10752]",en
+2000,Best Picture,American Beauty,"Bruce Cohen and Dan Jinks, Producers",Winner,,,[18],en
+2000,Best Picture,The Cider House Rules,"Richard N. Gladstein, Producer",Nominee,,,[18],en
+2000,Best Picture,The Green Mile,"David Valdes and Frank Darabont, Producers",Nominee,,,"[14, 18, 80]",en
+2000,Best Picture,The Insider,"Michael Mann and Pieter Jan Brugge, Producers",Nominee,,,"[18, 53, 36]",en
+2000,Best Picture,The Sixth Sense,"Frank Marshall, Kathleen Kennedy and Barry Mendel, Producers",Nominee,,,"[9648, 53, 18]",en
+2001,Best Picture,Gladiator,"Douglas Wick, David Franzoni and Branko Lustig, Producers",Winner,,,"[28, 18, 12]",en
+2001,Best Picture,Chocolat,"David Brown, Kit Golden and Leslie Holleran, Producers",Nominee,,,"[35, 18, 10749]",en
+2001,Best Picture,"Crouching Tiger, Hidden Dragon","Bill Kong, Hsu Li Kong and Ang Lee, Producers",Nominee,,,"[12, 18, 28, 10749]",zh
+2001,Best Picture,Erin Brockovich,"Danny DeVito, Michael Shamberg and Stacey Sher, Producers",Nominee,,,[18],en
+2001,Best Picture,Traffic,"Edward Zwick, Marshall Herskovitz and Laura Bickford, Producers",Nominee,,,"[53, 18, 80]",en
+2002,Best Picture,A Beautiful Mind,"Brian Grazer and Ron Howard, Producers",Winner,,,"[18, 10749]",en
+2002,Best Picture,Gosford Park,"Robert Altman, Bob Balaban and David Levy, Producers",Nominee,,,"[18, 9648, 53]",en
+2002,Best Picture,In the Bedroom,"Graham Leader, Ross Katz and Todd Field, Producers",Nominee,,,"[18, 53]",en
+2002,Best Picture,The Lord of the Rings: The Fellowship of the Ring,"Peter Jackson, Fran Walsh and Barrie M. Osborne, Producers",Nominee,,,"[12, 14, 28]",en
+2002,Best Picture,Moulin Rouge,"Martin Brown, Baz Luhrmann and Fred Baron, Producers",Nominee,,,"[18, 10749, 10402]",en
+2003,Best Picture,Chicago,"Martin Richards, Producer",Winner,,,"[35, 80, 18]",en
+2003,Best Picture,Gangs of New York,"Alberto Grimaldi and Harvey Weinstein, Producers",Nominee,,,"[18, 36, 80]",en
+2003,Best Picture,The Hours,"Scott Rudin and Robert Fox, Producers",Nominee,,,[18],en
+2003,Best Picture,The Lord of the Rings: The Two Towers,"Barrie M. Osborne, Fran Walsh and Peter Jackson, Producers",Nominee,,,"[12, 14, 28]",en
+2003,Best Picture,The Pianist,"Roman Polanski, Robert Benmussa and Alain Sarde, Producers",Nominee,,,"[18, 10752]",en
+2004,Best Picture,The Lord of the Rings: The Return of the King,"Barrie M. Osborne, Peter Jackson and Fran Walsh, Producers",Winner,,,"[12, 14, 28]",en
+2004,Best Picture,Lost in Translation,"Ross Katz and Sofia Coppola, Producers",Nominee,,,"[35, 18, 10749]",en
+2004,Best Picture,Master and Commander: The Far Side of the World,"Samuel Goldwyn, Jr., Peter Weir and Duncan Henderson, Producers",Nominee,,,"[12, 18, 10752]",en
+2004,Best Picture,Mystic River,"Robert Lorenz, Judie G. Hoyt and Clint Eastwood, Producers",Nominee,,,"[53, 80, 18, 9648]",en
+2004,Best Picture,Seabiscuit,"Kathleen Kennedy, Frank Marshall and Gary Ross, Producers",Nominee,,,"[18, 36]",en
+2005,Best Picture,Million Dollar Baby,"Clint Eastwood, Albert S. Ruddy and Tom Rosenberg, Producers",Winner,,,[18],en
+2005,Best Picture,The Aviator,"Michael Mann and Graham King, Producers",Nominee,,,[18],en
+2005,Best Picture,Finding Neverland,"Richard N. Gladstein and Nellie Bellflower, Producers",Nominee,,,[18],en
+2005,Best Picture,Ray,"Taylor Hackford, Stuart Benjamin and Howard Baldwin, Producers",Nominee,,,"[18, 10402]",en
+2005,Best Picture,Sideways,"Michael London, Producer",Nominee,,,"[35, 18, 10749]",en
+2006,Best Picture,Crash,"Paul Haggis and Cathy Schulman, Producers",Winner,,,[18],en
+2006,Best Picture,Brokeback Mountain,"Diana Ossana and James Schamus, Producers",Nominee,,,"[18, 10749]",en
+2006,Best Picture,Capote,"Caroline Baron, William Vince and Michael Ohoven, Producers",Nominee,,,"[80, 18]",en
+2006,Best Picture,"Good Night, and Good Luck.","Grant Heslov, Producer",Nominee,,,"[18, 36]",en
+2006,Best Picture,Munich,"Kathleen Kennedy, Steven Spielberg and Barry Mendel, Producers",Nominee,,,"[18, 28, 36, 53]",en
+2007,Best Picture,The Departed,"Graham King, Producer",Winner,,,"[18, 53, 80]",en
+2007,Best Picture,Babel,Alejandro González Iñárritu,Nominee,,,[18],en
+2007,Best Picture,Letters from Iwo Jima,"Clint Eastwood, Steven Spielberg and Robert Lorenz, Producers",Nominee,,,"[28, 18, 10752]",en
+2007,Best Picture,Little Miss Sunshine,"David T. Friendly, Peter Saraf and Marc Turtletaub, Producers",Nominee,,,"[35, 18]",en
+2007,Best Picture,The Queen,"Andy Harries, Christine Langan and Tracey Seaward, Producers",Nominee,,,"[18, 36]",en
+2008,Best Picture,No Country for Old Men,"Scott Rudin, Ethan Coen and Joel Coen, Producers",Winner,,,"[80, 18, 53]",en
+2008,Best Picture,Atonement,"Tim Bevan, Eric Fellner and Paul Webster, Producers",Nominee,,,"[18, 10749]",en
+2008,Best Picture,Juno,"Lianne Halfon, Mason Novick and Russell Smith, Producers",Nominee,,,"[35, 18, 10749]",en
+2008,Best Picture,Michael Clayton,"Sydney Pollack, Jennifer Fox and Kerry Orent, Producers",Nominee,,,"[18, 53]",en
+2008,Best Picture,There Will Be Blood,"JoAnne Sellar, Paul Thomas Anderson and Daniel Lupi, Producers",Nominee,,,[18],en
+2009,Best Picture,Slumdog Millionaire,"Christian Colson, Producer",Winner,,,"[18, 10749]",en
+2009,Best Picture,The Curious Case of Benjamin Button,The Curious Case of Benjamin Button,Nominee,,,"[18, 14, 10749]",en
+2009,Best Picture,Frost/Nixon,"Brian Grazer, Ron Howard and Eric Fellner, Producers",Nominee,,,"[18, 36]",en
+2009,Best Picture,Milk,"Dan Jinks and Bruce Cohen, Producers",Nominee,,,"[36, 18]",en
+2009,Best Picture,The Reader,"Anthony Minghella, Sydney Pollack, Donna Gigliotti and Redmond Morris, Producers",Nominee,,,"[18, 10749]",en
+2010,Best Picture,The Hurt Locker,"Kathryn Bigelow, Mark Boal, Nicolas Chartier and Greg Shapiro, Producers",Winner,,,"[18, 53, 10752]",en
+2010,Best Picture,Avatar,"James Cameron and Jon Landau, Producers",Nominee,,,"[28, 12, 14, 878]",en
+2010,Best Picture,The Blind Side,"Gil Netter, Andrew A. Kosove and Broderick Johnson, Producers",Nominee,,,[18],en
+2010,Best Picture,District 9,"Peter Jackson and Carolynne Cunningham, Producers",Nominee,,,[878],en
+2010,Best Picture,An Education,"Finola Dwyer and Amanda Posey, Producers",Nominee,,,"[18, 10749]",en
+2010,Best Picture,Inglourious Basterds,"Lawrence Bender, Producer",Nominee,,,"[18, 28, 53, 10752]",en
+2010,Best Picture,Precious,"Lee Daniels, Sarah Siegel-Magness and Gary Magness, Producers",Nominee,,,[18],en
+2010,Best Picture,A Serious Man,"Joel Coen and Ethan Coen, Producers",Nominee,,,"[35, 18]",en
+2010,Best Picture,Up,"Jonas Rivera, Producer",Nominee,,,"[16, 35, 10751, 12]",en
+2010,Best Picture,Up in the Air,"Daniel Dubiecki, Ivan Reitman and Jason Reitman, Producers",Nominee,,,"[18, 10749]",en
+2011,Best Picture,The King's Speech,"Iain Canning, Emile Sherman and Gareth Unwin, Producers",Winner,,,"[18, 36]",en
+2011,Best Picture,Black Swan,"Mike Medavoy, Brian Oliver and Scott Franklin, Producers",Nominee,,,"[18, 53, 27]",en
+2011,Best Picture,The Fighter,"David Hoberman, Todd Lieberman and Mark Wahlberg, Producers",Nominee,,,[18],en
+2011,Best Picture,Inception,"Emma Thomas and Christopher Nolan, Producers",Nominee,,,"[28, 878, 12]",en
+2011,Best Picture,The Kids Are All Right,"Gary Gilbert, Jeffrey Levy-Hinte and Celine Rattray, Producers",Nominee,,,"[35, 18]",en
+2011,Best Picture,127 Hours,"Christian Colson, Danny Boyle and John Smithson, Producers",Nominee,,,"[12, 18, 53]",en
+2011,Best Picture,The Social Network,The Social Network,Nominee,,,[18],en
+2011,Best Picture,Toy Story 3,"Darla K. Anderson, Producer",Nominee,,,"[16, 10751, 35]",en
+2011,Best Picture,True Grit,"Scott Rudin, Ethan Coen and Joel Coen, Producers",Nominee,,,"[18, 12, 37]",en
+2011,Best Picture,Winter's Bone,"Anne Rosellini and Alix Madigan-Yorkin, Producers",Nominee,,,[18],en
+2012,Best Picture,The Artist,"Thomas Langmann, Producer",Winner,,,"[18, 35, 10749]",en
+2012,Best Picture,The Descendants,"Jim Burke, Alexander Payne and Jim Taylor, Producers",Nominee,,,"[35, 18]",en
+2012,Best Picture,Extremely Loud & Incredibly Close,"Scott Rudin, Producer",Nominee,,,[18],en
+2012,Best Picture,The Help,"Brunson Green, Chris Columbus and Michael Barnathan, Producers",Nominee,,,[18],en
+2012,Best Picture,Hugo,"Graham King and Martin Scorsese, Producers",Nominee,,,"[12, 18, 10751]",en
+2012,Best Picture,Midnight in Paris,"Letty Aronson and Stephen Tenenbaum, Producers",Nominee,,,"[14, 35, 10749]",en
+2012,Best Picture,Moneyball,"Michael De Luca, Rachael Horovitz and Brad Pitt, Producers",Nominee,,,[18],en
+2012,Best Picture,The Tree of Life,"Sarah Green, Bill Pohlad, Dede Gardner and Grant Hill, Producers",Nominee,,,"[18, 14]",en
+2012,Best Picture,War Horse,"Steven Spielberg and Kathleen Kennedy, Producers",Nominee,,,"[18, 10752, 28]",en
+2013,Best Picture,Argo,"Grant Heslov, Ben Affleck and George Clooney, Producers",Winner,,,"[18, 53]",en
+2013,Best Picture,Amour,"Margaret Menegoz, Stefan Arndt, Veit Heiduschka and Michael Katz, Producers",Nominee,,,"[18, 10749]",fr
+2013,Best Picture,Beasts of the Southern Wild,"Dan Janvey, Josh Penn and Michael Gottwald, Producers",Nominee,,,[18],en
+2013,Best Picture,Django Unchained,"Stacey Sher, Reginald Hudlin and Pilar Savone, Producers",Nominee,,,"[18, 37]",en
+2013,Best Picture,Les Miserables,"Tim Bevan, Eric Fellner, Debra Hayward and Cameron Mackintosh, Producers",Nominee,,,"[36, 18]",en
+2013,Best Picture,Life of Pi,"Gil Netter, Ang Lee and David Womark, Producers",Nominee,,,"[12, 18, 28]",en
+2013,Best Picture,Lincoln,"Steven Spielberg and Kathleen Kennedy, Producers",Nominee,,,"[36, 18]",en
+2013,Best Picture,Silver Linings Playbook,"Donna Gigliotti, Bruce Cohen and Jonathan Gordon, Producers",Nominee,,,"[18, 35, 10749]",en
+2013,Best Picture,Zero Dark Thirty,"Mark Boal, Kathryn Bigelow and Megan Ellison, Producers",Nominee,,,"[53, 18, 36]",en
+2014,Best Picture,12 Years a Slave,"Brad Pitt, Dede Gardner, Jeremy Kleiner, Steve McQueen and Anthony Katagas, Producers",Winner,,,"[18, 36]",en
+2014,Best Picture,American Hustle,"Charles Roven, Richard Suckle, Megan Ellison and Jonathan Gordon, Producers",Nominee,,,"[18, 80]",en
+2014,Best Picture,Captain Phillips,"Scott Rudin, Dana Brunetti and Michael De Luca, Producers",Nominee,,,"[28, 18, 53]",en
+2014,Best Picture,Dallas Buyers Club,"Robbie Brenner and Rachel Winter, Producers",Nominee,,,"[18, 36]",en
+2014,Best Picture,Gravity,"Alfonso Cuarón and David Heyman, Producers",Nominee,,,"[878, 53, 18]",en
+2014,Best Picture,Her,"Megan Ellison, Spike Jonze and Vincent Landay, Producers",Nominee,,,"[10749, 878, 18]",en
+2014,Best Picture,Nebraska,"Albert Berger and Ron Yerxa, Producers",Nominee,,,"[18, 12]",en
+2014,Best Picture,Philomena,"Gabrielle Tana, Steve Coogan and Tracey Seaward, Producers",Nominee,,,[18],en
+2014,Best Picture,The Wolf of Wall Street,"Martin Scorsese, Leonardo DiCaprio, Joey McFarland and Emma Tillinger Koskoff, Producers",Nominee,,,"[80, 18, 35]",en
+2015,Best Picture,Birdman or (The Unexpected Virtue of Ignorance),"Alejandro G. Iñárritu, John Lesher and James W. Skotchdopole, Producers",Winner,,,"[18, 35]",en
+2015,Best Picture,American Sniper,"Clint Eastwood, Robert Lorenz, Andrew Lazar, Bradley Cooper and Peter Morgan, Producers",Nominee,,,"[10752, 28]",en
+2015,Best Picture,Boyhood,"Richard Linklater and Cathleen Sutherland, Producers",Nominee,,,[18],en
+2015,Best Picture,The Grand Budapest Hotel,"Wes Anderson, Scott Rudin, Steven Rales and Jeremy Dawson, Producers",Nominee,,,"[35, 18]",en
+2015,Best Picture,The Imitation Game,"Nora Grossman, Ido Ostrowsky and Teddy Schwarzman, Producers",Nominee,,,"[36, 18, 53, 10752]",en
+2015,Best Picture,Selma,"Christian Colson, Oprah Winfrey, Dede Gardner and Jeremy Kleiner, Producers",Nominee,,,"[36, 18]",en
+2015,Best Picture,The Theory of Everything,"Tim Bevan, Eric Fellner, Lisa Bruce and Anthony McCarten, Producers",Nominee,,,"[18, 10749]",en
+2015,Best Picture,Whiplash,"Jason Blum, Helen Estabrook and David Lancaster, Producers",Nominee,,,"[18, 10402]",en
+2016,Best Picture,Spotlight,"Michael Sugar, Steve Golin, Nicole Rocklin and Blye Pagon Faust, Producers",Winner,,,"[18, 53, 36]",en
+2016,Best Picture,The Big Short,"Brad Pitt, Dede Gardner and Jeremy Kleiner, Producers",Nominee,,,"[35, 18]",en
+2016,Best Picture,Bridge of Spies,"Steven Spielberg, Marc Platt and Kristie Macosko Krieger, Producers",Nominee,,,"[53, 18]",en
+2016,Best Picture,Brooklyn,"Finola Dwyer and Amanda Posey, Producers",Nominee,,,"[10749, 18]",en
+2016,Best Picture,Mad Max: Fury Road,"Doug Mitchell and George Miller, Producers",Nominee,,,"[28, 12, 878]",en
+2016,Best Picture,The Martian,"Simon Kinberg, Ridley Scott, Michael Schaefer and Mark Huffam, Producers",Nominee,,,"[18, 12, 878]",en
+2016,Best Picture,The Revenant,"Arnon Milchan, Steve Golin, Alejandro G. Iñárritu, Mary Parent and Keith Redmon, Producers",Nominee,,,"[37, 18, 12]",en
+2016,Best Picture,Room,"Ed Guiney, Producer",Nominee,,,"[18, 53]",en
+2017,Best Picture,Moonlight,"Adele Romanski, Dede Gardner and Jeremy Kleiner, Producers",Winner,,,[18],en
+2017,Best Picture,Arrival,"Shawn Levy, Dan Levine, Aaron Ryder and David Linde, Producers",Nominee,,,"[18, 878, 9648]",en
+2017,Best Picture,Fences,"Scott Rudin, Denzel Washington and Todd Black, Producers",Nominee,,,[18],en
+2017,Best Picture,Hacksaw Ridge,"Bill Mechanic and David Permut, Producers",Nominee,,,"[18, 36, 10752]",en
+2017,Best Picture,Hell or High Water,"Carla Hacken and Julie Yorn, Producers",Nominee,,,"[37, 80]",en
+2017,Best Picture,Hidden Figures,"Donna Gigliotti, Peter Chernin, Jenno Topping, Pharrell Williams and Theodore Melfi, Producers",Nominee,,,"[18, 36]",en
+2017,Best Picture,La La Land,"Fred Berger, Jordan Horowitz and Marc Platt, Producers",Nominee,,,"[35, 18, 10749, 10402]",en
+2017,Best Picture,Lion,"Emile Sherman, Iain Canning and Angie Fielder, Producers",Nominee,,,[18],en
+2017,Best Picture,Manchester by the Sea,"Matt Damon, Kimberly Steward, Chris Moore, Lauren Beck and Kevin J. Walsh, Producers",Nominee,,,[18],en
+2018,Best Picture,The Shape of Water,"Guillermo del Toro and J. Miles Dale, Producers",Winner,,,"[18, 14, 10749]",en
+2018,Best Picture,Call Me by Your Name,"Peter Spears, Luca Guadagnino, Emilie Georges and Marco Morabito, Producers",Nominee,,,"[10749, 18]",en
+2018,Best Picture,Darkest Hour,"Tim Bevan, Eric Fellner, Lisa Bruce, Anthony McCarten and Douglas Urbanski, Producers",Nominee,,,"[18, 36]",en
+2018,Best Picture,Dunkirk,"Emma Thomas and Christopher Nolan, Producers",Nominee,,,"[10752, 28, 18]",en
+2018,Best Picture,Get Out,"Sean McKittrick, Jason Blum, Edward H. Hamm Jr. and Jordan Peele, Producers",Nominee,,,"[9648, 53, 27]",en
+2018,Best Picture,Lady Bird,"Scott Rudin, Eli Bush and Evelyn O'Neill, Producers",Nominee,,,"[18, 35]",en
+2018,Best Picture,Phantom Thread,"JoAnne Sellar, Paul Thomas Anderson, Megan Ellison and Daniel Lupi, Producers",Nominee,,,"[18, 10749]",en
+2018,Best Picture,The Post,"Amy Pascal, Steven Spielberg and Kristie Macosko Krieger, Producers",Nominee,,,"[18, 36]",en
+2018,Best Picture,"Three Billboards outside Ebbing, Missouri","Graham Broadbent, Pete Czernin and Martin McDonagh, Producers",Nominee,,,"[80, 18]",en
+2019,Best Picture,Green Book,"Jim Burke, Charles B. Wessler, Brian Currie, Peter Farrelly and Nick Vallelonga, Producers",Winner,,,"[18, 35, 10402]",en
+2019,Best Picture,Black Panther,"Kevin Feige, Producer",Nominee,,,"[28, 12, 878]",en
+2019,Best Picture,BlacKkKlansman,"Sean McKittrick, Jason Blum, Raymond Mansfield, Jordan Peele and Spike Lee, Producers",Nominee,,,"[80, 18, 36, 35]",en
+2019,Best Picture,Bohemian Rhapsody,"Graham King, Producer",Nominee,,,"[10402, 18, 36]",en
+2019,Best Picture,The Favourite,"Ceci Dempsey, Ed Guiney, Lee Magiday and Yorgos Lanthimos, Producers",Nominee,,,"[36, 18, 35]",en
+2019,Best Picture,Roma,"Gabriela Rodríguez and Alfonso Cuarón, Producers",Nominee,,,[18],es
+2019,Best Picture,A Star Is Born,"Bill Gerber, Bradley Cooper and Lynette Howell Taylor, Producers",Nominee,,,"[18, 10749, 10402]",en
+2019,Best Picture,Vice,"Dede Gardner, Jeremy Kleiner, Adam McKay and Kevin Messick, Producers",Nominee,,,"[18, 36, 35]",en
+2020,Best Picture,Parasite,"Kwak Sin Ae and Bong Joon Ho, Producers",Winner,,,"[35, 53, 18]",ko
+2020,Best Picture,Ford v Ferrari,"Peter Chernin, Jenno Topping and James Mangold, Producers",Nominee,,,"[18, 28, 36]",en
+2020,Best Picture,The Irishman,"Martin Scorsese, Robert De Niro, Jane Rosenthal and Emma Tillinger Koskoff, Producers",Nominee,,,"[80, 18, 36]",en
+2020,Best Picture,Jojo Rabbit,"Carthew Neal, Taika Waititi and Chelsea Winstanley, Producers",Nominee,,,"[35, 10752, 18]",en
+2020,Best Picture,Joker,"Todd Phillips, Bradley Cooper and Emma Tillinger Koskoff, Producers",Nominee,,,"[80, 53, 18]",en
+2020,Best Picture,Little Women,"Amy Pascal, Producer",Nominee,,,"[18, 10749]",en
+2020,Best Picture,Marriage Story,"Noah Baumbach and David Heyman, Producers",Nominee,,,[18],en
+2020,Best Picture,1917,"Sam Mendes, Pippa Harris, Jayne-Ann Tenggren and Callum McDougall, Producers",Nominee,,,"[10752, 18, 28, 53]",en
+2020,Best Picture,Once upon a Time in Hollywood,"David Heyman, Shannon McIntosh and Quentin Tarantino, Producers",Nominee,,,"[35, 18, 53]",en
+2021,Best Picture,Nomadland,"Frances McDormand, Peter Spears, Mollye Asher, Dan Janvey and Chloé Zhao, Producers",Winner,,,[18],en
+2021,Best Picture,The Father,"David Parfitt, Jean-Louis Livi and Philippe Carcassonne, Producers",Nominee,,,[18],en
+2021,Best Picture,Judas and the Black Messiah,"Shaka King, Charles D. King and Ryan Coogler, Producers",Nominee,,,"[18, 36]",en
+2021,Best Picture,Mank,"Ceán Chaffin, Eric Roth and Douglas Urbanski, Producers",Nominee,,,"[18, 36]",en
+2021,Best Picture,Minari,"Christina Oh, Producer",Nominee,,,[18],en
+2021,Best Picture,Promising Young Woman,"Ben Browning, Ashley Fox, Emerald Fennell and Josey McNamara, Producers",Nominee,,,"[53, 80, 18]",en
+2021,Best Picture,Sound of Metal,"Bert Hamelinck and Sacha Ben Harroche, Producers",Nominee,,,"[18, 10402]",en
+2021,Best Picture,The Trial of the Chicago 7,"Marc Platt and Stuart Besser, Producers",Nominee,,,"[18, 36]",en
