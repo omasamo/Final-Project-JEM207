@@ -22,20 +22,3 @@ User can through easy GUI select categories and years in which he is interested.
 
 
 
-
-
-Notes from WIP:
-
-string familiarity library python
-
-json save the progress + raise Error pour Scrapping
-
-focus to the end :
-
-full documentation !!
-executable project: one script executable 
-jupyter is good for exploratory + presentation, but "professional" = script executable
-MAKE IT INSTALLABLE : PYTHON PACKAGE
-
-File that is an example of the use of the project
-documentation information in lecture 9
