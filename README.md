@@ -18,7 +18,7 @@ Then, we will use these datas to aks tmdb's API for more informations about the 
 
 These are afterwards processed and added to our dataframe, which is later stored for the future use. 
 
-User can through easy GUI select categories and years in which he is interested and for each of his selection, new dataset stored in csv file is created, permitting easy creation of multiple datasets with different searches. 
+User can through easy GUI select categories and years in which he is interested. For each of his selection, new dataset stored in csv file is created, permitting easy creation of multiple datasets with different searches. 
 
 
 
