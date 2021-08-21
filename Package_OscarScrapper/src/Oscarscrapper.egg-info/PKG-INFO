@@ -1,3 +1,19 @@
+Metadata-Version: 2.1
+Name: Oscarscrapper
+Version: 0.0.7
+Summary: ///
+Home-page: https://github.com/omasamo/Final-Project-JEM207
+Author: Yann Aubineau, Samuel Bozon
+Author-email: yann.aubineau@gmail.com, samuel.bozon@outlook.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
 # Final-Project-JEM207
 Final project for JEM207 Data Processing with Python
 We scrape from oscars.org site historical datasets of every nominees for the following 4 awards:
@@ -20,10 +36,7 @@ These are afterwards processed and added to our dataframe, which is later stored
 
 User can through easy GUI select categories and years in which he is interested and for each of his selection, new dataset stored in csv file is created, permitting easy creation of multiple datasets with different searches. 
 
-```sh
-# Pypi
-pip install OscarScrapper
-```
+
 
 
 
@@ -42,3 +55,5 @@ MAKE IT INSTALLABLE : PYTHON PACKAGE
 
 File that is an example of the use of the project
 documentation information in lecture 9
+
+

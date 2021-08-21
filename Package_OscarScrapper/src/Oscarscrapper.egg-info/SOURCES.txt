@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/Oscarscrapper.egg-info/PKG-INFO
+src/Oscarscrapper.egg-info/SOURCES.txt
+src/Oscarscrapper.egg-info/dependency_links.txt
+src/Oscarscrapper.egg-info/top_level.txt
+src/Oscarscrapper_package/Oscarscrapper.py
+src/Oscarscrapper_package/__init__.py

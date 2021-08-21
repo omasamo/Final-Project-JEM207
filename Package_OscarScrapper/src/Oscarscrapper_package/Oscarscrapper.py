@@ -1,7 +1,7 @@
 #####################################################################
 #   THE OSCARSCRAPPER, by YANN AUBINEAU AND SAMUEL BOZON            #
-#   yann.aubineau@gmail.com         @samuel.bozon@gmail.com
-#   2021
+#   yann.aubineau@gmail.com         @samuel.bozon@gmail.com         #
+#   2021                                                            #
 #####################################################################
 
 
