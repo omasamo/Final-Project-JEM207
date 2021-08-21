@@ -460,9 +460,9 @@ class Oscar_Scraper:
         # Creation of the csv file. We store each iteration of the dataframe separately
         downloads_path = str(Path.home() / "Downloads")
         number_of_files = 0
-        while os.path.exists(downloads_path+"Films%s.csv" % number_of_files):
+        while os.path.exists(downloads_path+"\Films%s.csv" % number_of_files):
             number_of_files += 1
-        films.to_csv(downloads_path+"Films%s.csv" % number_of_files)
+        films.to_csv(downloads_path+"\Films%s.csv" % number_of_files)
         return(print("The dataframe was saved as Films%s.csv in your downloads directory." % number_of_files))
 
 
@@ -528,21 +528,22 @@ class Oscar_Scraper:
                                 else:  # specific problems with some 1930's movies
                                     URL_MDB_SEARCH1930 = "https://api.themoviedb.org/3/search/movie?api_key={}&language=en-US&query={}&page={}&include_adult=false&year=1930"
                                     response_search = json.loads(requests.get(URL_MDB_SEARCH1930.format(API_KEY_MDB,title_standard,1)).text)
+                                    
                                     if response_search["total_results"] != 0:        
                                         if self.TMDB_get(response_search, film_number) == True: # A movie-individual pair was found, we look for the individual data now
                                             response_person = json.loads(requests.get(URL_MDB_PERSON.format(self.list_id_indiv[count_indiv_records],API_KEY_MDB)).text)
-
+                                            
                                             if response_person.get("success") != False: # Check if the API find a person
                                                 
-                                               if response_person["birthday"] in (None,0):
-                                                self.list_birthday.append(np.nan)
-                                            else:
-                                                self.list_birthday.append(response_person["birthday"])
+                                                if response_person["birthday"] in (None,0):
+                                                    self.list_birthday.append(np.nan)
+                                                else:
+                                                   self.list_birthday.append(response_person["birthday"])
                                             
-                                            if response_person["gender"] in (None,0):
-                                                self.list_birthday.append(np.nan)
-                                            else:
-                                                self.list_gender.append(response_person["gender"])
+                                                if response_person["gender"] in (None,0):
+                                                    self.list_birthday.append(np.nan)
+                                                else:
+                                                    self.list_gender.append(response_person["gender"])
 
                 elif self.data['category'][film_number] in self.categories_films: # Special condition if we are not looking for the data on individual (winner of the award is a company for example)
                     title_standard = quote(self.data['film'][film_number])
@@ -583,6 +584,7 @@ class Oscar_Scraper:
 
                             if found == False:
                                 self.list_originallanguage.append('not found')
+     
                                 self.list_genreids.append('not found')
                                 self.list_birthday.append(np.nan)
                                 self.list_gender.append(np.nan)
@@ -775,6 +777,7 @@ class Oscar_Scraper:
             
 if __name__ == "__main__": # execute only if run as a script
     Scrapper = Oscar_Scraper()
+
 
 
 
