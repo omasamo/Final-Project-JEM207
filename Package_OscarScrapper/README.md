@@ -27,18 +27,23 @@ pip install OscarScrapper
 
 
 
-Notes from WIP:
+## Notes from WIP:
 
-string familiarity library python
+#####  1. Recommandation : use string familiarity library python
+- Used jellyfish
 
-json save the progress + raise Error pour Scrapping
+##### 2. Raise error if problem during scrapping
+- Done and we added a GUI to provi
 
-focus to the end :
+##### 3. Full documentation 
+- The code is documented and scripts show the typical use both as a package and a executable.
 
-full documentation !!
-executable project: one script executable 
-jupyter is good for exploratory + presentation, but "professional" = script executable
-MAKE IT INSTALLABLE : PYTHON PACKAGE
+##### 4 . Executable project: one script executable 
+- Done
 
-File that is an example of the use of the project
-documentation information in lecture 9
+#### 5. Jupyter is good for exploratory + presentation, but "professional" = script executable
+- We switched from jupyter to python script and made a package out of it
+
+#### 6. Make it installable : Python package
+- Done
+

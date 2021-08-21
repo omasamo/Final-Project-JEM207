@@ -17,7 +17,9 @@ import jellyfish
 from urllib.parse import quote
 import os 
 import sys # to use exit()
-from tkinter import * # Window 
+from tkinter import * # Window
+from pathlib import Path
+
 
 os.chdir(os.path.dirname(os.path.abspath(__file__))) # This changes the working directory to be the same as where the python script is. FOR EXECUTABLE
 
@@ -434,12 +436,13 @@ class Oscar_Scraper:
         individuals.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns 
         
         # Creation of the csv file. We store each iteration of the dataframe separately
+        downloads_path = str(Path.home() / "Downloads")
         number_of_files = 0
-        while os.path.exists("data\Individuals%s.csv" % number_of_files):
+        while os.path.exists(downloads_path+"\Individuals%s.csv" % number_of_files):
             number_of_files += 1
-        individuals.to_csv("data\Individuals%s.csv" % number_of_files)
+        individuals.to_csv(downloads_path+"\Individuals%s.csv" % number_of_files)
         
-        return(print("The dataframe was saved as Individuals%s.csv in your working directory." % number_of_files))
+        return(print("The dataframe was saved as Individuals%s.csv in your downloads directory." % number_of_files))
     
         
     def printFILMS(self):
@@ -455,11 +458,12 @@ class Oscar_Scraper:
         films.reset_index() # For some reasons the index is not saved with the rest so we make it back to two columns
                
         # Creation of the csv file. We store each iteration of the dataframe separately
+        downloads_path = str(Path.home() / "Downloads")
         number_of_files = 0
-        while os.path.exists("data\Films%s.csv" % number_of_files):
+        while os.path.exists(downloads_path+"Films%s.csv" % number_of_files):
             number_of_files += 1
-        films.to_csv("data\Films%s.csv" % number_of_files)
-        return(print("The dataframe was saved as Films%s.csv in your working directory." % number_of_files))
+        films.to_csv(downloads_path+"Films%s.csv" % number_of_files)
+        return(print("The dataframe was saved as Films%s.csv in your downloads directory." % number_of_files))
 
 
         
