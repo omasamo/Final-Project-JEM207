@@ -7,7 +7,7 @@ def readme():
 
 setup(name='OscarScrapper',
       version='1.0',
-      description='Python Distribution Utilities',
+      description='Academy Awards Scraper and Data processor',
       author='Yann Aubineau, Samuel Bozon',
       author_email='yann.aubineau@gmail.com, samuel.bozon@outlook.com',
       long_description=readme(),
