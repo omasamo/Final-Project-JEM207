@@ -1,13 +1,15 @@
 from setuptools import setup, find_packages
 
-
-def readme():
-    with open('README.md') as f:
-        return f.read()
+# read the contents of your README file
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+        long_description = f.read()
 
 setup(name='OscarScrapper',
-      version='1.0',
-      description='Python Distribution Utilities',
+      version='1.3',
+      long_description = long_description,
+      long_description_content_type='text/markdown'
       author='Yann Aubineau, Samuel Bozon',
       author_email='yann.aubineau@gmail.com, samuel.bozon@outlook.com',
       long_description=readme(),
@@ -15,10 +17,6 @@ setup(name='OscarScrapper',
       packages=find_packages("src"),  # include all packages under src
       package_dir={"": "src"},   # tell distutils packages are under src
       package_data= {"": ["data/corrections/*.csv"]},
-      classifiers=[
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.9',
-      ],
       install_requires=[
           'markdown',
           'requests',

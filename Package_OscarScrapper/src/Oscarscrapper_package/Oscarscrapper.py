@@ -25,22 +25,6 @@ os.chdir(os.path.dirname(os.path.abspath(__file__))) # This changes the working 
 
 class Oscar_Scraper:
     
-    # *  Defining lists containing the future raw data
-    list_names = []
-    list_year = []
-    list_category = []
-    list_films = []
-    list_results = [] 
-    list_id_movie = []
-    list_birthday = []
-    list_gender = []
-    list_id_indiv = []
-    list_names_right = []
-    list_films_right = []
-    list_names_wrong = []
-    list_films_wrong = []
-    list_originallanguage = []
-    list_genreids = []
     
     def __init__(self):
         """
@@ -75,6 +59,23 @@ class Oscar_Scraper:
         # * Stores the user's selected categories to fetch
         self.selected_categories = []
         
+        # *  Defining lists containing the future raw data
+        self.list_names = []
+        self.list_year = []
+        self.list_category = []
+        self.list_films = []
+        self.list_results = [] 
+        self.list_id_movie = []
+        self.list_birthday = []
+        self.list_gender = []
+        self.list_id_indiv = []
+        self.list_names_right = []
+        self.list_films_right = []
+        self.list_names_wrong = []
+        self.list_films_wrong = []
+        self.list_originallanguage = []
+        self.list_genreids = []
+    
                  
         # * Initialize the lists containing the future cleaned data
         self.data = {
@@ -471,7 +472,7 @@ class Oscar_Scraper:
 
         """
         Main method.
-        From the title, it searches in an complete movie database for the movie, then we extract the matching individual and collect their birthdate and gender.
+        From the title, it searches in an complete movie database for the movie, then we extract the matching individual and collect their birthdate and gender, for movie it collects their original language and genre.
         It uses the sub-method getTMDB
         Returns nothing
         
