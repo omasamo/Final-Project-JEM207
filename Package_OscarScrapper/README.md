@@ -38,5 +38,7 @@ from Oscarscrapper_package import Oscarscrapper
 Scraper = Oscarscrapper.Oscar_Scraper()
 ```
 
+Please see or use Example.py to understand how to use the package
+
 
 
